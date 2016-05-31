@@ -8,6 +8,7 @@
 
 #import "InvitationCell.h"
 #import "InvitedLayer.h"
+#import "ImageUtil.h"
 
 @implementation InvitationCell
 
@@ -27,12 +28,13 @@
     [_backgroundRecView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
     [_backgroundRecView.layer setBorderWidth:1.0f];
     
-    [self convertToRoundImage:_invitorPhoto BorderColor:[UIColor whiteColor] BorderWidth:0.0f];
+    //[self convertToRoundImage:_invitorPhoto BorderColor:[UIColor whiteColor] BorderWidth:0.0f];
     
     //[_invitedContent addSubview:[[InvitedLayer new] getInvitedLayer:nil SourceView:_invitedContent]];
     _nameLabel.text = @"钟路成";
     _placeLabel.text = @"临平大酒店";
     _dateLabel.text = @"2015-06-13 15:40";
+    _invitorPhoto.image = [ImageUtil roundedImage:[UIImage imageNamed:@"zhonglucheng"]];
 }
 -(void)addInvitedUsers{
     [_invitedContent addSubview:[[InvitedLayer new] getInvitedLayer:nil SourceView:_invitedContent]];

@@ -7,9 +7,11 @@
 //
 
 #import "InvitedLayer.h"
+#import "ImageUtil.h"
 
 @implementation InvitedLayer{
     CGFloat photoWidth;
+    UIImage *resizedImage;
 }
 -(id)init{
     return [self initWithGap:5.0f];
@@ -19,6 +21,7 @@
     if(self){
         _gap = gap;
         photoWidth = 30;
+        resizedImage = [ImageUtil roundedImage:[UIImage imageNamed:@"zhonglucheng"] toWidth:photoWidth height:photoWidth];
     }
     return self;
 }
@@ -31,10 +34,11 @@
     for(i=0;i<10;i++){
         [invitedView addSubview:({
             UIImageView *subView = [[UIImageView alloc] initWithFrame:CGRectMake(xPoint, yPoing, photoWidth, photoWidth)];
-            subView.image = [UIImage imageNamed:@"zhonglucheng"];
-            [self convertToRoundImage:subView BorderColor:[UIColor whiteColor] BorderWidth:2.0f];
+            subView.image = resizedImage;
+            //[self convertToRoundImage:subView BorderColor:[UIColor whiteColor] BorderWidth:2.0f];
             subView;
         })];
+        
         xPoint += _gap+photoWidth;
         if(i>=numberPerRow-1){
             if(yPoing == _gap){
@@ -49,6 +53,7 @@
     return invitedView;
 }
 
+#pragma mark - image utils
 -(void)convertToRoundImage:(UIImageView*)imageView BorderColor:(UIColor*)borderColor BorderWidth:(CGFloat)borderWidth{
     imageView.layer.masksToBounds = YES;
     imageView.layer.cornerRadius = imageView.frame.size.width * 0.5;
