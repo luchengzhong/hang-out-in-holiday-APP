@@ -11,6 +11,10 @@
 		944D0BF91CFC6AB900BD998E /* InvitationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944D0BF81CFC6AB900BD998E /* InvitationTableViewController.m */; };
 		944D0BFD1CFC74C000BD998E /* InvitationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 944D0BFC1CFC74C000BD998E /* InvitationCell.m */; };
 		944D0C001CFC891F00BD998E /* InvitedLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 944D0BFF1CFC891F00BD998E /* InvitedLayer.m */; };
+		94613BB91CFEDC0B008E517F /* HOIHHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 94613BB81CFEDC0B008E517F /* HOIHHTTPClient.m */; };
+		94613BCB1CFF0F45008E517F /* Friends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 94613BC81CFF0F45008E517F /* Friends+CoreDataProperties.m */; };
+		94613BCC1CFF0F45008E517F /* CDFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = 94613BCA1CFF0F45008E517F /* CDFriends.m */; };
+		94613BCF1CFF103D008E517F /* CDFriendsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94613BCE1CFF103D008E517F /* CDFriendsManager.m */; };
 		94BB081A1CF888D6006B477F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08191CF888D6006B477F /* main.m */; };
 		94BB081D1CF888D6006B477F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB081C1CF888D6006B477F /* AppDelegate.m */; };
 		94BB08201CF888D6006B477F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB081F1CF888D6006B477F /* ViewController.m */; };
@@ -50,6 +54,14 @@
 		944D0BFC1CFC74C000BD998E /* InvitationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationCell.m; sourceTree = "<group>"; };
 		944D0BFE1CFC891F00BD998E /* InvitedLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitedLayer.h; sourceTree = "<group>"; };
 		944D0BFF1CFC891F00BD998E /* InvitedLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitedLayer.m; sourceTree = "<group>"; };
+		94613BB71CFEDC0B008E517F /* HOIHHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOIHHTTPClient.h; sourceTree = "<group>"; };
+		94613BB81CFEDC0B008E517F /* HOIHHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOIHHTTPClient.m; sourceTree = "<group>"; };
+		94613BC71CFF0F45008E517F /* Friends+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataProperties.h"; sourceTree = "<group>"; };
+		94613BC81CFF0F45008E517F /* Friends+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataProperties.m"; sourceTree = "<group>"; };
+		94613BC91CFF0F45008E517F /* CDFriends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFriends.h; sourceTree = "<group>"; };
+		94613BCA1CFF0F45008E517F /* CDFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFriends.m; sourceTree = "<group>"; };
+		94613BCD1CFF103D008E517F /* CDFriendsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFriendsManager.h; sourceTree = "<group>"; };
+		94613BCE1CFF103D008E517F /* CDFriendsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFriendsManager.m; sourceTree = "<group>"; };
 		94BB08151CF888D5006B477F /* HOIH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HOIH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BB08191CF888D6006B477F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94BB081B1CF888D6006B477F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +139,28 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		94613BB61CFED9C5008E517F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				94613BB71CFEDC0B008E517F /* HOIHHTTPClient.h */,
+				94613BB81CFEDC0B008E517F /* HOIHHTTPClient.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		94613BBA1CFF0EA9008E517F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				94613BC71CFF0F45008E517F /* Friends+CoreDataProperties.h */,
+				94613BC81CFF0F45008E517F /* Friends+CoreDataProperties.m */,
+				94613BC91CFF0F45008E517F /* CDFriends.h */,
+				94613BCA1CFF0F45008E517F /* CDFriends.m */,
+				94613BCD1CFF103D008E517F /* CDFriendsManager.h */,
+				94613BCE1CFF103D008E517F /* CDFriendsManager.m */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
 		94BB080C1CF888D5006B477F = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +186,7 @@
 		94BB08171CF888D6006B477F /* HOIH */ = {
 			isa = PBXGroup;
 			children = (
-				943E37E91CFDBDE7002BEFB3 /* ImageUtil */,
+				94613BB61CFED9C5008E517F /* Network */,
 				94BB081B1CF888D6006B477F /* AppDelegate.h */,
 				94BB081C1CF888D6006B477F /* AppDelegate.m */,
 				94BB081E1CF888D6006B477F /* ViewController.h */,
@@ -160,6 +194,8 @@
 				94BB08211CF888D6006B477F /* Main.storyboard */,
 				94BB08271CF888D6006B477F /* Assets.xcassets */,
 				944D0BF61CFC69DD00BD998E /* Invitation */,
+				943E37E91CFDBDE7002BEFB3 /* ImageUtil */,
+				94613BBA1CFF0EA9008E517F /* Friends */,
 				94BB08291CF888D6006B477F /* LaunchScreen.storyboard */,
 				94BB082C1CF888D6006B477F /* Info.plist */,
 				94BB08241CF888D6006B477F /* HOIH.xcdatamodeld */,
@@ -394,11 +430,15 @@
 			files = (
 				94BB08201CF888D6006B477F /* ViewController.m in Sources */,
 				944D0BF91CFC6AB900BD998E /* InvitationTableViewController.m in Sources */,
+				94613BB91CFEDC0B008E517F /* HOIHHTTPClient.m in Sources */,
 				944D0BFD1CFC74C000BD998E /* InvitationCell.m in Sources */,
 				944D0C001CFC891F00BD998E /* InvitedLayer.m in Sources */,
+				94613BCB1CFF0F45008E517F /* Friends+CoreDataProperties.m in Sources */,
 				94BB08261CF888D6006B477F /* HOIH.xcdatamodeld in Sources */,
 				94BB081D1CF888D6006B477F /* AppDelegate.m in Sources */,
 				94BB081A1CF888D6006B477F /* main.m in Sources */,
+				94613BCC1CFF0F45008E517F /* CDFriends.m in Sources */,
+				94613BCF1CFF103D008E517F /* CDFriendsManager.m in Sources */,
 				943E37EC1CFDBDFB002BEFB3 /* ImageUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

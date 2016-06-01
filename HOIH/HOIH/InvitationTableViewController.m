@@ -8,6 +8,7 @@
 
 #import "InvitationTableViewController.h"
 #import "InvitationCell.h"
+#import "HOIHHTTPClient.h"
 
 @interface InvitationTableViewController ()
 
@@ -23,7 +24,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
+    [client getInvitations:@"luchengzhong" Time:@""];
 }
 
 - (void)didReceiveMemoryWarning {
