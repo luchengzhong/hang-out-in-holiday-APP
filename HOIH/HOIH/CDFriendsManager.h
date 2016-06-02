@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HOIHHTTPClient.h"
+#import "HOIHDataManager.h"
 
-@interface CDFriendsManager : NSObject
-
+@interface CDFriendsManager : HOIHDataManager <HOIHHTTPClientDelegate>
+-(void)updateFriends;
+-(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateFriends:(id)friends Time:(NSString *)date;
 @end

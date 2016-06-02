@@ -44,6 +44,7 @@ static HOIHHTTPClient *_sharedHTTPClient;
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateInvitations:Time:)]) {
             [self.delegate HOIHHTTPClient:self didUpdateInvitations:responseObject Time:date];
         }
+        NSLog(@"%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didFailWithError:)]) {
             [self.delegate HOIHHTTPClient:self didFailWithError:error];
@@ -66,5 +67,25 @@ static HOIHHTTPClient *_sharedHTTPClient;
         
     }];*/
 
+}
+
+- (void)getFriends:(NSString*)username Time:(NSString*)date{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    
+    parameters[@"username"] = username;
+    if(date)
+        parameters[@"date"] = date;
+    
+    [self POST:@"FriendController.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateFriends:Time:)]) {
+            [self.delegate HOIHHTTPClient:self didUpdateFriends:responseObject Time:date];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didFailWithError:)]) {
+            [self.delegate HOIHHTTPClient:self didFailWithError:error];
+        }
+        NSLog(@"%@",error);
+    }];
 }
 @end

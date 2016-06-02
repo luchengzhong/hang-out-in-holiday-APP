@@ -11,5 +11,10 @@
 @implementation CDFriends
 
 // Insert code here to add functionality to your managed object subclass
-
+-(void)setUsername:(NSString*)username Name:(NSString*)name Photo:(NSString*)photo UpdateTime:(NSString*)date{
+    self.username = username;
+    self.name =name;
+    self.photo = photo;
+    self.update_time = date;
+}
 @end

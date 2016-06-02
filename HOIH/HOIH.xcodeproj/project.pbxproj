@@ -24,6 +24,9 @@
 		94BB082B1CF888D6006B477F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BB08291CF888D6006B477F /* LaunchScreen.storyboard */; };
 		94BB08361CF888D6006B477F /* HOIHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08351CF888D6006B477F /* HOIHTests.m */; };
 		94BB08411CF888D6006B477F /* HOIHUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08401CF888D6006B477F /* HOIHUITests.m */; };
+		94E45AD01D001FB700EF976D /* HOIHConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45ACF1D001FB700EF976D /* HOIHConfigure.m */; };
+		94E45AD41D002EAF00EF976D /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45AD31D002EAF00EF976D /* DateUtil.m */; };
+		94E45AD81D006AF800EF976D /* HOIHDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45AD71D006AF800EF976D /* HOIHDataManager.m */; };
 		C778C3FB2A03242DF28F43E3 /* libPods-HOIH.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A314704C449E60B188E67A01 /* libPods-HOIH.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,12 @@
 		94BB083C1CF888D6006B477F /* HOIHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HOIHUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BB08401CF888D6006B477F /* HOIHUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HOIHUITests.m; sourceTree = "<group>"; };
 		94BB08421CF888D6006B477F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94E45ACE1D001FB700EF976D /* HOIHConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOIHConfigure.h; sourceTree = "<group>"; };
+		94E45ACF1D001FB700EF976D /* HOIHConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOIHConfigure.m; sourceTree = "<group>"; };
+		94E45AD21D002EAF00EF976D /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
+		94E45AD31D002EAF00EF976D /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
+		94E45AD61D006AF800EF976D /* HOIHDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOIHDataManager.h; sourceTree = "<group>"; };
+		94E45AD71D006AF800EF976D /* HOIHDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOIHDataManager.m; sourceTree = "<group>"; };
 		99E92AD8DA76DCBDE9CAB533 /* Pods-HOIH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIH.release.xcconfig"; path = "Pods/Target Support Files/Pods-HOIH/Pods-HOIH.release.xcconfig"; sourceTree = "<group>"; };
 		A314704C449E60B188E67A01 /* libPods-HOIH.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HOIH.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -196,6 +205,9 @@
 				944D0BF61CFC69DD00BD998E /* Invitation */,
 				943E37E91CFDBDE7002BEFB3 /* ImageUtil */,
 				94613BBA1CFF0EA9008E517F /* Friends */,
+				94E45ACD1D001F9000EF976D /* APPConfigure */,
+				94E45AD51D006ADE00EF976D /* CoreData */,
+				94E45AD11D002E8500EF976D /* DateUtil */,
 				94BB08291CF888D6006B477F /* LaunchScreen.storyboard */,
 				94BB082C1CF888D6006B477F /* Info.plist */,
 				94BB08241CF888D6006B477F /* HOIH.xcdatamodeld */,
@@ -228,6 +240,33 @@
 				94BB08421CF888D6006B477F /* Info.plist */,
 			);
 			path = HOIHUITests;
+			sourceTree = "<group>";
+		};
+		94E45ACD1D001F9000EF976D /* APPConfigure */ = {
+			isa = PBXGroup;
+			children = (
+				94E45ACE1D001FB700EF976D /* HOIHConfigure.h */,
+				94E45ACF1D001FB700EF976D /* HOIHConfigure.m */,
+			);
+			name = APPConfigure;
+			sourceTree = "<group>";
+		};
+		94E45AD11D002E8500EF976D /* DateUtil */ = {
+			isa = PBXGroup;
+			children = (
+				94E45AD21D002EAF00EF976D /* DateUtil.h */,
+				94E45AD31D002EAF00EF976D /* DateUtil.m */,
+			);
+			name = DateUtil;
+			sourceTree = "<group>";
+		};
+		94E45AD51D006ADE00EF976D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				94E45AD61D006AF800EF976D /* HOIHDataManager.h */,
+				94E45AD71D006AF800EF976D /* HOIHDataManager.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		E84D5248B1483EB58ED50D25 /* Pods */ = {
@@ -431,15 +470,18 @@
 				94BB08201CF888D6006B477F /* ViewController.m in Sources */,
 				944D0BF91CFC6AB900BD998E /* InvitationTableViewController.m in Sources */,
 				94613BB91CFEDC0B008E517F /* HOIHHTTPClient.m in Sources */,
+				94E45AD41D002EAF00EF976D /* DateUtil.m in Sources */,
 				944D0BFD1CFC74C000BD998E /* InvitationCell.m in Sources */,
 				944D0C001CFC891F00BD998E /* InvitedLayer.m in Sources */,
 				94613BCB1CFF0F45008E517F /* Friends+CoreDataProperties.m in Sources */,
+				94E45AD01D001FB700EF976D /* HOIHConfigure.m in Sources */,
 				94BB08261CF888D6006B477F /* HOIH.xcdatamodeld in Sources */,
 				94BB081D1CF888D6006B477F /* AppDelegate.m in Sources */,
 				94BB081A1CF888D6006B477F /* main.m in Sources */,
 				94613BCC1CFF0F45008E517F /* CDFriends.m in Sources */,
 				94613BCF1CFF103D008E517F /* CDFriendsManager.m in Sources */,
 				943E37EC1CFDBDFB002BEFB3 /* ImageUtil.m in Sources */,
+				94E45AD81D006AF800EF976D /* HOIHDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

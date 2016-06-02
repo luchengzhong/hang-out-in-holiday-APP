@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CDFriends : NSManagedObject
 
+-(void)setUsername:(NSString*)username Name:(NSString*)name Photo:(NSString*)photo UpdateTime:(NSString*)date;
 // Insert code here to declare functionality of your managed object subclass
 
 @end

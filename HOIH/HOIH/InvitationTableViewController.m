@@ -9,12 +9,15 @@
 #import "InvitationTableViewController.h"
 #import "InvitationCell.h"
 #import "HOIHHTTPClient.h"
+#import "CDFriendsManager.h"
 
 @interface InvitationTableViewController ()
 
 @end
 
-@implementation InvitationTableViewController
+@implementation InvitationTableViewController{
+    CDFriendsManager *fm;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,8 +27,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
-    [client getInvitations:@"luchengzhong" Time:@""];
+    
+    //HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
+    //[client getInvitations:@"luchengzhong" Time:@""];
+    fm = [CDFriendsManager new];
+    [fm updateFriends];
 }
 
 - (void)didReceiveMemoryWarning {
