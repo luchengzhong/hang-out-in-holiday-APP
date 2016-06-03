@@ -11,6 +11,7 @@
 #import "HOIHDataManager.h"
 
 @interface CDFriendsManager : HOIHDataManager <HOIHHTTPClientDelegate>
--(void)updateFriends;
+-(NSMutableDictionary*)updateFriends;
+-(NSMutableDictionary*)updateMembers:(NSArray*)memberList;
 -(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateFriends:(id)friends Time:(NSString *)date;
 @end

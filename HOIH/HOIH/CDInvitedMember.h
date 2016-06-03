@@ -1,8 +1,8 @@
 //
-//  Friends.h
+//  CDInvitedMember.h
 //  HOIH
 //
-//  Created by 钟路成 on 16/6/1.
+//  Created by 钟路成 on 16/6/3.
 //  Copyright © 2016年 Lucheng Zhong. All rights reserved.
 //
 
@@ -11,13 +11,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CDFriends : NSManagedObject
+@interface CDInvitedMember : NSManagedObject
 
--(void)setUsername:(NSString*)username Name:(NSString*)name Photo:(NSString*)photo UpdateTime:(NSString*)date;
 // Insert code here to declare functionality of your managed object subclass
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "CDFriends+CoreDataProperties.h"
+#import "CDInvitedMember+CoreDataProperties.h"

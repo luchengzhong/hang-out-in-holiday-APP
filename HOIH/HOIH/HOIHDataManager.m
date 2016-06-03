@@ -24,6 +24,9 @@
     return object;
 }
 -(NSArray*)select:(NSString*)predicateStr EntityName:(NSString*)entityName{
+    return [self select:predicateStr EntityName:entityName PageNum:0 NumPerPage:-1];
+}
+-(NSArray*)select:(NSString*)predicateStr EntityName:(NSString*)entityName PageNum:(NSInteger)pageNum NumPerPage:(NSInteger)numPerPage{
     NSManagedObjectContext* context = [self sharedContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     request.entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
@@ -31,6 +34,10 @@
     if(predicateStr){
         NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateStr];
         request.predicate = predicate;
+    }
+    if(numPerPage>0){
+        [request setFetchLimit:numPerPage];
+        [request setFetchOffset:pageNum * numPerPage];
     }
     NSError *error = nil;
     NSArray *objs = [context executeFetchRequest:request error:&error];

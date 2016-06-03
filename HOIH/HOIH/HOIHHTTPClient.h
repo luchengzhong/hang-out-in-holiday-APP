@@ -17,6 +17,7 @@
 
 - (void)getInvitations:(NSString*)username Time:(NSString*)date;
 - (void)getFriends:(NSString*)username Time:(NSString*)date;
+- (void)getMembers:(NSArray*)requestArray Time:(NSString*)date;
 @end
 
 @protocol HOIHHTTPClientDelegate <NSObject>

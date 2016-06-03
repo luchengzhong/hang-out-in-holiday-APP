@@ -16,5 +16,10 @@
     self.name =name;
     self.photo = photo;
     self.update_time = date;
+    //self.isFriend = [NSNumber numberWithBool:YES];
+}
+-(void)setUsername:(NSString*)username Name:(NSString*)name Photo:(NSString*)photo UpdateTime:(NSString*)date isFriend:(NSNumber*)isFriend{
+    [self setUsername:username Name:name Photo:photo UpdateTime:date];
+    self.isFriend = isFriend;
 }
 @end

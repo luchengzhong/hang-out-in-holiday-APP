@@ -14,19 +14,15 @@
 
 static NSString* entityName = @"CDFriends";
 static NSString* configureTimesName = @"FriendsUpdateTime";
+static NSString* configureMemberTimesName = @"MembersUpdateTime";
 @implementation CDFriendsManager{
     NSString *updateTime;
     NSMutableDictionary *friendsList;
+    NSString *configureName;
 }
--(id)init{
-    self = [super init];
-    if(self){
-        [self initFriendsList];
-    }
-    return self;
-}
--(void)initFriendsList{
-    NSArray *array = [super select:nil EntityName:entityName];
+
+-(void)initUserInfoList:(NSString*)selectString{
+    NSArray *array = [super select:selectString EntityName:entityName];
     friendsList = [NSMutableDictionary new];
     if(!array){
         return;
@@ -35,18 +31,56 @@ static NSString* configureTimesName = @"FriendsUpdateTime";
         friendsList[afriend.username] = afriend;
     }
 }
--(void)updateFriends{
+#pragma mark - Members
+-(NSMutableDictionary*)updateMembers:(NSMutableArray*)memberList{
+    if([memberList count] == 0)
+        return [NSMutableDictionary new];
+    
+    //remove duplicate
+    NSOrderedSet *mySet = [[NSOrderedSet alloc] initWithArray:memberList];
+    memberList = [[NSMutableArray alloc] initWithArray:[mySet array]];
+    
+    //read from core data
+    NSString *selectStr = @"";
+    NSMutableArray *requestArray = [NSMutableArray new];
+    NSInteger index=0;
+    NSInteger count = [memberList count];
+    for(index=0;index<count;index++){
+        NSString* uid = memberList[index];
+        if(index != 0)
+            selectStr = [selectStr stringByAppendingString:[NSString stringWithFormat:@" or username = '%@'", uid]];
+        else
+            selectStr = [selectStr stringByAppendingString:[NSString stringWithFormat:@"username = '%@'", uid]];
+        [requestArray addObject:uid];
+    }
+    
+    //update from server
+    [self initUserInfoList:selectStr];
+    configureName = configureMemberTimesName;
+    updateTime = [[HOIHConfigure _sharedInstance] getConfigueValueForKey:configureName];
+    HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
+    client.delegate = self;
+    [client getMembers:requestArray Time:updateTime];
+    return friendsList;
+}
+
+
+#pragma mark - Friends
+-(NSMutableDictionary*)updateFriends{
+    [self initUserInfoList:@"isFriend = true"];
     updateTime = [self friendsUpdateTime];
     HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
     client.delegate = self;
     [client getFriends:@"luchengzhong" Time:updateTime];
+    return friendsList;
 }
 -(NSString*)friendsUpdateTime{
-    return [[HOIHConfigure _sharedInstance] getConfigueValueForKey:configureTimesName];
+    configureName = configureTimesName;
+    return [[HOIHConfigure _sharedInstance] getConfigueValueForKey:configureName];
 }
 
 -(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateFriends:(id)friends Time:(NSString *)date{
-    NSArray *array = friends[@"friends"];
+    NSArray *array = friends;
     if([array count]==0){
         return;
     }
@@ -54,19 +88,25 @@ static NSString* configureTimesName = @"FriendsUpdateTime";
     for(NSDictionary* friendItem in array){
         CDFriends *afriend;
         NSLog(@"%@",friendItem[@"username"]);
+        
         if(friendsList[friendItem[@"username"]]){
             afriend = friendsList[friendItem[@"username"]];
         }else{
             afriend = [NSEntityDescription insertNewObjectForEntityForName:entityName
                                                     inManagedObjectContext:[super sharedContext]];
+            [afriend setIsFriend:[NSNumber numberWithBool:NO]];
+        }
+        if([configureName isEqualToString:configureTimesName]){
+            [afriend setIsFriend:[NSNumber numberWithBool:YES]];
         }
         [afriend setUsername:[friendItem valueForKey:@"username"]
                         Name:friendItem[@"name"] Photo:friendItem[@"photo"]
                   UpdateTime:friendItem[@"update_time"]];
         friendsList[friendItem[@"username"]] = afriend;
     }
+    //to do... delete friend
     if([super saveContext:[super sharedContext]]){
-        [[HOIHConfigure _sharedInstance] setConfigueValue:updateTime ForKey:configureTimesName];
+        [[HOIHConfigure _sharedInstance] setConfigueValue:updateTime ForKey:configureName];
     }
     
     NSLog(@"%@",friends);
