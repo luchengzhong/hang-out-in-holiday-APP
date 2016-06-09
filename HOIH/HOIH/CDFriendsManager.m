@@ -19,8 +19,15 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
     NSString *updateTime;
     NSMutableDictionary *friendsList;
     NSString *configureName;
+    dispatch_queue_t updateQueue;
 }
-
+-(id)init{
+    self = [super init];
+    if(self){
+        updateQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
+    }
+    return self;
+}
 -(void)initUserInfoList:(NSString*)selectString{
     NSArray *array = [super select:selectString EntityName:entityName];
     friendsList = [NSMutableDictionary new];
@@ -60,7 +67,7 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
     updateTime = [[HOIHConfigure _sharedInstance] getConfigueValueForKey:configureName];
     HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
     client.delegate = self;
-    [client getMembers:requestArray Time:updateTime];
+    [client getMembers:requestArray];
     return friendsList;
 }
 
@@ -84,31 +91,39 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
     if([array count]==0){
         return;
     }
-    updateTime = array[0][@"update_time"];
-    for(NSDictionary* friendItem in array){
-        CDFriends *afriend;
-        NSLog(@"%@",friendItem[@"username"]);
+    dispatch_sync(updateQueue, ^(){
+        for(NSDictionary* friendItem in array){
+            CDFriends *afriend;
+            NSLog(@"%@",friendItem[@"username"]);
+            
+            if(friendsList[friendItem[@"username"]]){
+                afriend = friendsList[friendItem[@"username"]];
+            }else{
+                afriend = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                        inManagedObjectContext:[super sharedContext]];
+                [afriend setIsFriend:[NSNumber numberWithBool:NO]];
+            }
+            if([configureName isEqualToString:configureTimesName]){
+                [afriend setIsFriend:[NSNumber numberWithBool:YES]];
+            }
+            [afriend setUsername:[friendItem valueForKey:@"username"]
+                            Name:friendItem[@"name"] Photo:friendItem[@"photo"]
+                      UpdateTime:friendItem[@"update_time"]];
+            friendsList[friendItem[@"username"]] = afriend;
+        }
+        //to do... delete friend
+        if([super saveContext:[super sharedContext]]){
+            updateTime = array[0][@"update_time"];
+            [[HOIHConfigure _sharedInstance] setConfigueValue:updateTime ForKey:configureName];
+        }
         
-        if(friendsList[friendItem[@"username"]]){
-            afriend = friendsList[friendItem[@"username"]];
-        }else{
-            afriend = [NSEntityDescription insertNewObjectForEntityForName:entityName
-                                                    inManagedObjectContext:[super sharedContext]];
-            [afriend setIsFriend:[NSNumber numberWithBool:NO]];
+        if(_delegate && [_delegate respondsToSelector:@selector(CDFriendsManager:didUpdateUserinfos:Time:)]){
+            dispatch_sync(dispatch_get_main_queue(), ^(){
+                [_delegate CDFriendsManager:self didUpdateUserinfos:friendsList Time:date];
+            });
         }
-        if([configureName isEqualToString:configureTimesName]){
-            [afriend setIsFriend:[NSNumber numberWithBool:YES]];
-        }
-        [afriend setUsername:[friendItem valueForKey:@"username"]
-                        Name:friendItem[@"name"] Photo:friendItem[@"photo"]
-                  UpdateTime:friendItem[@"update_time"]];
-        friendsList[friendItem[@"username"]] = afriend;
-    }
-    //to do... delete friend
-    if([super saveContext:[super sharedContext]]){
-        [[HOIHConfigure _sharedInstance] setConfigueValue:updateTime ForKey:configureName];
-    }
+        NSLog(@"%@",friends);
+    });
     
-    NSLog(@"%@",friends);
 }
 @end

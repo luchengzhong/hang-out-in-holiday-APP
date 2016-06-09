@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CDInvitation : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
-
+-(BOOL)setMembersWithArray:(NSArray*)array;
+-(NSArray*)getMembersArray;
 @end
 
 NS_ASSUME_NONNULL_END

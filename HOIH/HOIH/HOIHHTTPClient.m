@@ -88,12 +88,10 @@ static HOIHHTTPClient *_sharedHTTPClient;
         NSLog(@"%@",error);
     }];
 }
-- (void)getMembers:(NSArray*)requestArray Time:(NSString*)date{
+- (void)getMembers:(NSArray*)requestArray{
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
     parameters[@"members"] = requestArray;
-    if(date)
-        parameters[@"date"] = date;
     
     [self POST:@"MemberController.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateFriends:Time:)]) {

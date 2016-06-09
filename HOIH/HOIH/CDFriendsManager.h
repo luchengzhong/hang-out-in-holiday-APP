@@ -9,9 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "HOIHHTTPClient.h"
 #import "HOIHDataManager.h"
+@protocol CDFriendsManagerDelegate;
 
 @interface CDFriendsManager : HOIHDataManager <HOIHHTTPClientDelegate>
+@property id<CDFriendsManagerDelegate> delegate;
+
+
 -(NSMutableDictionary*)updateFriends;
 -(NSMutableDictionary*)updateMembers:(NSArray*)memberList;
 -(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateFriends:(id)friends Time:(NSString *)date;
+@end
+
+@protocol CDFriendsManagerDelegate <NSObject>
+
+@optional
+-(void)CDFriendsManager:(CDFriendsManager *)manager didUpdateUserinfos:(NSDictionary *)userinfos Time:(NSString*)date;
 @end

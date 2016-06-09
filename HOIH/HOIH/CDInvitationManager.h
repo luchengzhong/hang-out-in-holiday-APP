@@ -7,7 +7,8 @@
 //
 
 #import "HOIHDataManager.h"
+#import "HOIHHTTPClient.h"
 
-@interface CDInvitationManager : HOIHDataManager
+@interface CDInvitationManager : HOIHDataManager <HOIHHTTPClientDelegate>
 
 @end

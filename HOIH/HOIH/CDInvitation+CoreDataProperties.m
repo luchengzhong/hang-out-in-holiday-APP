@@ -2,7 +2,7 @@
 //  CDInvitation+CoreDataProperties.m
 //  HOIH
 //
-//  Created by 钟路成 on 16/6/3.
+//  Created by 钟路成 on 16/6/9.
 //  Copyright © 2016年 Lucheng Zhong. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,15 +13,15 @@
 
 @implementation CDInvitation (CoreDataProperties)
 
-@dynamic iid;
-@dynamic create_time;
-@dynamic invite_time;
-@dynamic coordinate;
-@dynamic place_name;
-@dynamic inviter_id;
 @dynamic comment;
-@dynamic update_time;
+@dynamic coordinate;
+@dynamic create_time;
+@dynamic iid;
+@dynamic invite_time;
+@dynamic inviter_id;
+@dynamic place_name;
 @dynamic status;
+@dynamic update_time;
 @dynamic members;
 
 @end

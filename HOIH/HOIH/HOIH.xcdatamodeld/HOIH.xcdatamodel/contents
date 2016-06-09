@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
     <entity name="CDFriends" representedClassName="CDFriends" syncable="YES">
         <attribute name="isFriend" optional="YES" attributeType="Boolean" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,18 +14,13 @@
         <attribute name="iid" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="invite_time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="inviter_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="members" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="place_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="update_time" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDInvitedMember" syncable="YES"/>
-    </entity>
-    <entity name="CDInvitedMember" representedClassName="CDInvitedMember" syncable="YES">
-        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="CDFriends" positionX="0" positionY="0" width="128" height="118"/>
-        <element name="CDInvitation" positionX="-288" positionY="68" width="128" height="193"/>
-        <element name="CDInvitedMember" positionX="-117" positionY="207" width="128" height="73"/>
+        <element name="CDInvitation" positionX="-288" positionY="68" width="128" height="195"/>
     </elements>
 </model>
