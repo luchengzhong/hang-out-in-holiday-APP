@@ -27,4 +27,8 @@
     return strToReturn;
 }
 
+
++ (NSComparisonResult)compareStringDate1:(NSString*)date1 Date2:(NSString*)date2{
+    return [date1 caseInsensitiveCompare:date2];
+}
 @end

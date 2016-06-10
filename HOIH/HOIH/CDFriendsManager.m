@@ -119,7 +119,7 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
         
         if(_delegate && [_delegate respondsToSelector:@selector(CDFriendsManager:didUpdateUserinfos:Time:)]){
             dispatch_sync(dispatch_get_main_queue(), ^(){
-                [_delegate CDFriendsManager:self didUpdateUserinfos:friendsList Time:date];
+                [_delegate CDFriendsManager:self didUpdateUserinfos:friendsList Time:updateTime];
             });
         }
         NSLog(@"%@",friends);

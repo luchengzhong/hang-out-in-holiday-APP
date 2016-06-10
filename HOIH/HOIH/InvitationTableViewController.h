@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CDInvitationManager.h"
 
-@interface InvitationTableViewController : UITableViewController
+@interface InvitationTableViewController : UITableViewController <CDInvitationManagerDelegate, CDFriendsManagerDelegate>
 
 @end

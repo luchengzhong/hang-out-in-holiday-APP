@@ -10,6 +10,6 @@
 
 @implementation HOIHUserInfo
 +(NSString*)getUsername{
-    return "luchengzhong";
+    return @"luchengzhong";
 }
 @end

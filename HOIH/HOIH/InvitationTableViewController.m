@@ -8,15 +8,18 @@
 
 #import "InvitationTableViewController.h"
 #import "InvitationCell.h"
+#import "CDInvitation.h"
 #import "HOIHHTTPClient.h"
-#import "CDFriendsManager.h"
 
 @interface InvitationTableViewController ()
 
 @end
 
 @implementation InvitationTableViewController{
-    CDFriendsManager *fm;
+    //CDFriendsManager *memManager;
+    CDInvitationManager *invManager;
+    NSArray *invitationList;
+    UIActivityIndicatorView *spinner;
 }
 
 - (void)viewDidLoad {
@@ -30,8 +33,22 @@
     
     //HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
     //[client getInvitations:@"luchengzhong" Time:@""];
-    fm = [CDFriendsManager new];
-    [fm updateFriends];
+    //fm = [CDFriendsManager new];
+    //[fm updateFriends];
+    invManager = [CDInvitationManager new];
+    invManager.delegate = self;
+    invitationList = [invManager updateInvitationsForPage:0];
+    
+    if(spinner == nil){
+        spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        CGRect rect = [[UIScreen mainScreen] bounds];
+        CGSize size = rect.size;
+        CGFloat kScreenWidth = size.width;
+        CGFloat kScreenHeight = self.tableView.frame.size.height;
+        [spinner setCenter:CGPointMake(kScreenWidth/2.0 - 25, kScreenHeight/2.0)];
+    }
+    [self.tableView addSubview:spinner]; // spinner is not visible until started
+    [spinner startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,12 +68,18 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 15;
+    if(invitationList)
+        return [invitationList count];
+    return 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CDInvitation *invitation = invitationList[indexPath.row];
     InvitationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationCell" forIndexPath:indexPath];
+    cell.dateLabel.text = invitation.invite_time;
+    cell.nameLabel.text = invitation.inviter_id;
+    cell.placeLabel.text = [NSString stringWithFormat:@"%ld", [invitation.iid longValue]];
     [cell addInvitedUsers];
     // Configure the cell...
     
@@ -108,4 +131,13 @@
 }
 */
 
+#pragma mark - Delegate Methods
+-(void)CDInvitationManager:(CDInvitationManager *)manager didUpdateInvitations:(NSArray *)invitations{
+    [spinner stopAnimating];
+    invitationList = invitations;
+    [self.tableView reloadData];
+}
+-(void)CDFriendsManager:(CDFriendsManager *)manager didUpdateUserinfos:(NSDictionary *)userinfos Time:(NSString *)date{
+    
+}
 @end

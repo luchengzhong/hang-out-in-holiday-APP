@@ -10,5 +10,5 @@
 
 @interface DateUtil : NSObject
 + (NSString*)getCurrentNormalDateString;
-
++ (NSComparisonResult)compareStringDate1:(NSString*)date1 Date2:(NSString*)date2;
 @end

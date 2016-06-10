@@ -39,10 +39,12 @@ static HOIHHTTPClient *_sharedHTTPClient;
 
     parameters[@"username"] = username;
     parameters[@"request_type"] = @"getInvitations";
+    if(date)
+        parameters[@"date"] = date;
     
     [self POST:@"InvitationController.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateInvitations:Time:)]) {
-            [self.delegate HOIHHTTPClient:self didUpdateInvitations:responseObject Time:date];
+            [self.delegate HOIHHTTPClient:self didUpdateInvitations:responseObject[@"invitations"] Time:date];
         }
         NSLog(@"%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -95,7 +97,7 @@ static HOIHHTTPClient *_sharedHTTPClient;
     
     [self POST:@"MemberController.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateFriends:Time:)]) {
-            [self.delegate HOIHHTTPClient:self didUpdateFriends:responseObject[@"members"] Time:date];
+            [self.delegate HOIHHTTPClient:self didUpdateFriends:responseObject[@"members"] Time:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didFailWithError:)]) {
