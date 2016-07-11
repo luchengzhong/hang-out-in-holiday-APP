@@ -10,14 +10,14 @@
     <entity name="CDInvitation" representedClassName="CDInvitation" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="coordinate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="create_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="iid" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
-        <attribute name="invite_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="invite_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="inviter_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="members" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="place_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="update_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="update_time" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
         <element name="CDFriends" positionX="0" positionY="0" width="128" height="118"/>

@@ -13,6 +13,7 @@
 @property CGFloat gap;
 
 -(id)initWithGap:(CGFloat)gap;
+-(id)initWithGap:(CGFloat)gap PhotoWidth:(CGFloat)width;
 
--(UIView*) getInvitedLayer:(NSDictionary*)members SourceView:(UIView*)sourceView;
+-(UIView*) getInvitedLayer:(NSArray*)members SourceView:(UIView*)sourceView MemberInfo:(NSDictionary*)memberInfo;
 @end

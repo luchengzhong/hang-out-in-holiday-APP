@@ -13,7 +13,7 @@
 -(NSManagedObjectContext*)sharedContext;
 -(NSManagedObject*)insert:(NSManagedObject*)object Context:(NSManagedObjectContext*)context;
 -(NSArray*)select:(NSString*)predicateStr EntityName:(NSString*)entityName;
--(NSArray*)select:(NSString*)predicateStr EntityName:(NSString*)entityName PageNum:(NSInteger)pageNum NumPerPage:(NSInteger)numPerPage;
+-(NSArray*)select:(NSString*)predicateStr EntityName:(NSString*)entityName PageNum:(NSInteger)pageNum NumPerPage:(NSInteger)numPerPage SortDescriptor:(NSArray*)sortDes;
 -(BOOL)delete:(NSManagedObject*)object;
 -(BOOL)saveContext:(NSManagedObjectContext*)context;
 @end

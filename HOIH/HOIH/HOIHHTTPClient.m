@@ -43,10 +43,10 @@ static HOIHHTTPClient *_sharedHTTPClient;
         parameters[@"date"] = date;
     
     [self POST:@"InvitationController.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateInvitations:Time:)]) {
             [self.delegate HOIHHTTPClient:self didUpdateInvitations:responseObject[@"invitations"] Time:date];
         }
-        NSLog(@"%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didFailWithError:)]) {
             [self.delegate HOIHHTTPClient:self didFailWithError:error];
@@ -80,6 +80,7 @@ static HOIHHTTPClient *_sharedHTTPClient;
         parameters[@"date"] = date;
     
     [self POST:@"FriendController.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateFriends:Time:)]) {
             [self.delegate HOIHHTTPClient:self didUpdateFriends:responseObject[@"friends"] Time:date];
         }
@@ -96,8 +97,27 @@ static HOIHHTTPClient *_sharedHTTPClient;
     parameters[@"members"] = requestArray;
     
     [self POST:@"MemberController.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateFriends:Time:)]) {
             [self.delegate HOIHHTTPClient:self didUpdateFriends:responseObject[@"members"] Time:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didFailWithError:)]) {
+            [self.delegate HOIHHTTPClient:self didFailWithError:error];
+        }
+        NSLog(@"%@",error);
+    }];
+}
+
+- (void)getMessages:(NSString*)IID{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    parameters[@"IID"] = IID;
+    
+    [self POST:@"MessagesController.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didUpdateMessages:)]) {
+            [self.delegate HOIHHTTPClient:self didUpdateMessages:responseObject[@"messages"]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if ([self.delegate respondsToSelector:@selector(HOIHHTTPClient:didFailWithError:)]) {

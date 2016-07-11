@@ -2,7 +2,7 @@
 //  CDFriends+CoreDataProperties.m
 //  HOIH
 //
-//  Created by 钟路成 on 16/6/2.
+//  Created by 钟路成 on 16/7/10.
 //  Copyright © 2016年 Lucheng Zhong. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,10 +13,10 @@
 
 @implementation CDFriends (CoreDataProperties)
 
+@dynamic isFriend;
 @dynamic name;
 @dynamic photo;
 @dynamic update_time;
 @dynamic username;
-@dynamic isFriend;
 
 @end

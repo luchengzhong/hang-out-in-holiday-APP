@@ -9,6 +9,8 @@
 #import "InvitationCell.h"
 #import "InvitedLayer.h"
 #import "ImageUtil.h"
+#import "DateUtil.h"
+#import "CDFriends.h"
 
 @implementation InvitationCell
 
@@ -34,10 +36,21 @@
     //_nameLabel.text = @"钟路成";
     //_placeLabel.text = @"临平大酒店";
     //_dateLabel.text = @"2015-06-13 15:40";
-    _invitorPhoto.image = [ImageUtil roundedImage:[UIImage imageNamed:@"zhonglucheng"]];
+}
+
+#pragma mark - Invitation data source
+-(void)setInvitation:(CDInvitation *)invitation MemberList:(NSDictionary*) memberList{
+    _memberList = memberList;
+    _invitation = invitation;
+    _dateLabel.text = [DateUtil formatDateFromDate:invitation.invite_time Type:@"Normal"];
+    _nameLabel.text = invitation.inviter_id;
+    _placeLabel.text = [NSString stringWithFormat:@"%ld", [invitation.iid longValue]];
+    NSString *photoNmae = [NSString stringWithFormat:@"photo_%@",((CDFriends*)memberList[invitation.inviter_id]).photo];
+    _invitorPhoto.image = [ImageUtil roundedImage:[UIImage imageNamed:photoNmae]];
+    [self addInvitedUsers];
 }
 -(void)addInvitedUsers{
-    [_invitedContent addSubview:[[InvitedLayer new] getInvitedLayer:nil SourceView:_invitedContent]];
+    [_invitedContent addSubview:[[InvitedLayer new] getInvitedLayer:[_invitation getMembersArray] SourceView:_invitedContent MemberInfo:_memberList]];
 }
 -(void)convertToRoundImage:(UIImageView*)imageView BorderColor:(UIColor*)borderColor BorderWidth:(CGFloat)borderWidth{
     imageView.layer.masksToBounds = YES;

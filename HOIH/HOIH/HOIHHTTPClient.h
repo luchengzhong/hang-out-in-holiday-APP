@@ -18,6 +18,7 @@
 - (void)getInvitations:(NSString*)username Time:(NSString*)date;
 - (void)getFriends:(NSString*)username Time:(NSString*)date;
 - (void)getMembers:(NSArray*)requestArray;
+- (void)getMessages:(NSString*)IID;
 @end
 
 @protocol HOIHHTTPClientDelegate <NSObject>
@@ -26,4 +27,5 @@
 -(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateInvitations:(id)invitations Time:(NSString*)date;
 -(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateFriends:(id)friends Time:(NSString*)date;
 -(void)HOIHHTTPClient:(HOIHHTTPClient *)client didFailWithError:(NSError*) error;
+-(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateMessages:(id)messages;
 @end

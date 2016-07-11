@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ImageUtil : NSObject
++ (UIImage*)roundedImageNamed:(NSString*)image toWidth:(NSInteger)width height:(NSInteger)height;
 + (UIImage*)roundedImage:(UIImage*)image toWidth:(NSInteger)width height:(NSInteger)height;
 + (UIImage*)roundedImage:(UIImage*)image;
++ (UIImage*)resizeImage:(NSString*)name;
 @end

@@ -10,6 +10,8 @@
 #import "InvitationCell.h"
 #import "CDInvitation.h"
 #import "HOIHHTTPClient.h"
+#import "DateUtil.h"
+#import "InvitationDetailViewController.h"
 
 @interface InvitationTableViewController ()
 
@@ -19,6 +21,7 @@
     //CDFriendsManager *memManager;
     CDInvitationManager *invManager;
     NSArray *invitationList;
+    NSDictionary *membersList;
     UIActivityIndicatorView *spinner;
 }
 
@@ -35,11 +38,20 @@
     //[client getInvitations:@"luchengzhong" Time:@""];
     //fm = [CDFriendsManager new];
     //[fm updateFriends];
-    invManager = [CDInvitationManager new];
-    invManager.delegate = self;
-    invitationList = [invManager updateInvitationsForPage:0];
     
-    if(spinner == nil){
+    
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    //self.refreshControl.backgroundColor = [UIColor whiteColor];
+    self.refreshControl.tintColor = [UIColor blackColor];
+    //self.refreshControl.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    [self.refreshControl addTarget:self
+                            action:@selector(refresh)
+                  forControlEvents:UIControlEventValueChanged];
+    
+    [self refresh];
+    [self.refreshControl beginRefreshing];
+    /*if(spinner == nil){
         spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         CGRect rect = [[UIScreen mainScreen] bounds];
         CGSize size = rect.size;
@@ -48,12 +60,20 @@
         [spinner setCenter:CGPointMake(kScreenWidth/2.0 - 25, kScreenHeight/2.0)];
     }
     [self.tableView addSubview:spinner]; // spinner is not visible until started
-    [spinner startAnimating];
+    [spinner startAnimating];*/
+    self.navigationItem.title = @"假日潇洒小组";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+#pragma mark - Data load
+-(void)refresh{
+    invManager = [CDInvitationManager new];
+    invManager.delegate = self;
+    invitationList = [invManager updateInvitationsForPage:0];
+    membersList = invManager.membersDict;
 }
 
 #pragma mark - Table view data source
@@ -77,10 +97,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CDInvitation *invitation = invitationList[indexPath.row];
     InvitationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationCell" forIndexPath:indexPath];
-    cell.dateLabel.text = invitation.invite_time;
-    cell.nameLabel.text = invitation.inviter_id;
-    cell.placeLabel.text = [NSString stringWithFormat:@"%ld", [invitation.iid longValue]];
-    [cell addInvitedUsers];
+    [cell setInvitation:invitation MemberList:membersList];
     // Configure the cell...
     
     return cell;
@@ -121,23 +138,35 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"ShowInvitationDetail"]) {
+        InvitationDetailViewController *controller = [segue destinationViewController];
+        controller.invitation = invitationList[self.tableView.indexPathForSelectedRow.row];
+        controller.userInfoDict = membersList;
+    }
 }
-*/
+
 
 #pragma mark - Delegate Methods
+//update Invitation first, at this time, update members request has been sent
 -(void)CDInvitationManager:(CDInvitationManager *)manager didUpdateInvitations:(NSArray *)invitations{
-    [spinner stopAnimating];
-    invitationList = invitations;
-    [self.tableView reloadData];
+    if(invitations){
+        invitationList = invitations;
+    }else{
+        [self.refreshControl endRefreshing];
+    }
 }
+//update members
 -(void)CDFriendsManager:(CDFriendsManager *)manager didUpdateUserinfos:(NSDictionary *)userinfos Time:(NSString *)date{
-    
+    membersList = userinfos;
+    [spinner stopAnimating];
+    [self.refreshControl endRefreshing];
+    [self.tableView reloadData];
 }
 @end

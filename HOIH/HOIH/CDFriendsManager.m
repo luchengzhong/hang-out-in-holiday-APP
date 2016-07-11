@@ -28,17 +28,38 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
     }
     return self;
 }
--(void)initUserInfoList:(NSString*)selectString{
+-(NSMutableDictionary*)getUserInfoList:(NSString*)selectString{
     NSArray *array = [super select:selectString EntityName:entityName];
-    friendsList = [NSMutableDictionary new];
+    NSMutableDictionary *friendsListCoreData = [NSMutableDictionary new];
     if(!array){
-        return;
+        return [NSMutableDictionary new];
     }
     for(CDFriends* afriend in array){
-        friendsList[afriend.username] = afriend;
+        friendsListCoreData[afriend.username] = afriend;
     }
+    return friendsListCoreData;
 }
 #pragma mark - Members
+-(NSMutableDictionary*)getMembersFromCoreData:(NSMutableArray*)usernameList{
+    //remove duplicate
+    NSOrderedSet *mySet = [[NSOrderedSet alloc] initWithArray:usernameList];
+    usernameList = [[NSMutableArray alloc] initWithArray:[mySet array]];
+    
+    //read from core data
+    NSString *selectStr = @"";
+    NSMutableArray *requestArray = [NSMutableArray new];
+    NSInteger index=0;
+    NSInteger count = [usernameList count];
+    for(index=0;index<count;index++){
+        NSString* uid = usernameList[index];
+        if(index != 0)
+            selectStr = [selectStr stringByAppendingString:[NSString stringWithFormat:@" OR username = '%@'", uid]];
+        else
+            selectStr = [selectStr stringByAppendingString:[NSString stringWithFormat:@"username = '%@'", uid]];
+        [requestArray addObject:uid];
+    }
+    return [self getUserInfoList:selectStr];
+}
 -(NSMutableDictionary*)updateMembers:(NSMutableArray*)memberList{
     if([memberList count] == 0)
         return [NSMutableDictionary new];
@@ -47,34 +68,22 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
     NSOrderedSet *mySet = [[NSOrderedSet alloc] initWithArray:memberList];
     memberList = [[NSMutableArray alloc] initWithArray:[mySet array]];
     
-    //read from core data
-    NSString *selectStr = @"";
-    NSMutableArray *requestArray = [NSMutableArray new];
-    NSInteger index=0;
-    NSInteger count = [memberList count];
-    for(index=0;index<count;index++){
-        NSString* uid = memberList[index];
-        if(index != 0)
-            selectStr = [selectStr stringByAppendingString:[NSString stringWithFormat:@" or username = '%@'", uid]];
-        else
-            selectStr = [selectStr stringByAppendingString:[NSString stringWithFormat:@"username = '%@'", uid]];
-        [requestArray addObject:uid];
-    }
+    friendsList = [self getMembersFromCoreData:memberList];
     
     //update from server
-    [self initUserInfoList:selectStr];
+    
     configureName = configureMemberTimesName;
     updateTime = [[HOIHConfigure _sharedInstance] getConfigueValueForKey:configureName];
     HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
     client.delegate = self;
-    [client getMembers:requestArray];
+    [client getMembers:memberList];
     return friendsList;
 }
 
 
 #pragma mark - Friends
 -(NSMutableDictionary*)updateFriends{
-    [self initUserInfoList:@"isFriend = true"];
+    friendsList = [self getUserInfoList:@"isFriend = true"];
     updateTime = [self friendsUpdateTime];
     HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
     client.delegate = self;
@@ -118,9 +127,9 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
         }
         
         if(_delegate && [_delegate respondsToSelector:@selector(CDFriendsManager:didUpdateUserinfos:Time:)]){
-            dispatch_sync(dispatch_get_main_queue(), ^(){
+            //dispatch_sync(dispatch_get_main_queue(), ^(){
                 [_delegate CDFriendsManager:self didUpdateUserinfos:friendsList Time:updateTime];
-            });
+            //});
         }
         NSLog(@"%@",friends);
     });

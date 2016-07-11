@@ -9,6 +9,11 @@
 #import "DateUtil.h"
 
 @implementation DateUtil
++ (NSDate*)dateFromString:(NSString*)dateStr{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    return [dateFormatter dateFromString:dateStr];
+}
 + (NSString*)getCurrentNormalDateString{
     NSDate *date = [NSDate date];
     return [self formatDateFromDate:date Type:@"Normal"];

@@ -13,6 +13,8 @@
 @protocol CDInvitationManagerDelegate;
 @interface CDInvitationManager : HOIHDataManager <HOIHHTTPClientDelegate>
 @property id<CDInvitationManagerDelegate, CDFriendsManagerDelegate>delegate;
+@property NSMutableDictionary *membersDict;
+
 -(NSArray*)updateInvitationsForPage:(NSInteger)pageNum;
 @end
 

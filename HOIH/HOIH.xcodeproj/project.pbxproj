@@ -18,6 +18,15 @@
 		94613BCF1CFF103D008E517F /* CDFriendsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94613BCE1CFF103D008E517F /* CDFriendsManager.m */; };
 		9476AFB51D00D77800488C55 /* CDFriends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476AFB41D00D77800488C55 /* CDFriends+CoreDataProperties.m */; };
 		9476AFBC1D00DAD200488C55 /* CDInvitationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476AFBB1D00DAD200488C55 /* CDInvitationManager.m */; };
+		949C20F81D33CD0C00F44003 /* TypePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C20F71D33CD0C00F44003 /* TypePickerView.m */; };
+		949C20FB1D33D2AB00F44003 /* AddInvitationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C20FA1D33D2AB00F44003 /* AddInvitationController.m */; };
+		949C20FD1D33D97F00F44003 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949C20FC1D33D97F00F44003 /* MapKit.framework */; };
+		949C21041D33DF3600F44003 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C21031D33DF3600F44003 /* FriendsViewController.m */; };
+		949C21081D33E03400F44003 /* FriendInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C21071D33E03400F44003 /* FriendInfoCell.m */; };
+		949C8DBF1D32DFA2002991D5 /* InvitationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C8DBE1D32DFA2002991D5 /* InvitationDetailViewController.m */; };
+		949C8DC31D32DFCA002991D5 /* InvitationHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C8DC21D32DFCA002991D5 /* InvitationHeadCell.m */; };
+		949C8DC61D32DFDA002991D5 /* InvitedMembersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C8DC51D32DFDA002991D5 /* InvitedMembersCell.m */; };
+		949C8DC91D32DFEA002991D5 /* InvitationMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C8DC81D32DFEA002991D5 /* InvitationMessageCell.m */; };
 		94BB081A1CF888D6006B477F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08191CF888D6006B477F /* main.m */; };
 		94BB081D1CF888D6006B477F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB081C1CF888D6006B477F /* AppDelegate.m */; };
 		94BB08201CF888D6006B477F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB081F1CF888D6006B477F /* ViewController.m */; };
@@ -75,6 +84,23 @@
 		9476AFB41D00D77800488C55 /* CDFriends+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDFriends+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9476AFBA1D00DAD200488C55 /* CDInvitationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDInvitationManager.h; sourceTree = "<group>"; };
 		9476AFBB1D00DAD200488C55 /* CDInvitationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDInvitationManager.m; sourceTree = "<group>"; };
+		949C20F61D33CD0C00F44003 /* TypePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypePickerView.h; sourceTree = "<group>"; };
+		949C20F71D33CD0C00F44003 /* TypePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypePickerView.m; sourceTree = "<group>"; };
+		949C20F91D33D2AB00F44003 /* AddInvitationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddInvitationController.h; sourceTree = "<group>"; };
+		949C20FA1D33D2AB00F44003 /* AddInvitationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddInvitationController.m; sourceTree = "<group>"; };
+		949C20FC1D33D97F00F44003 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		949C21021D33DF3600F44003 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		949C21031D33DF3600F44003 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		949C21061D33E03400F44003 /* FriendInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInfoCell.h; sourceTree = "<group>"; };
+		949C21071D33E03400F44003 /* FriendInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInfoCell.m; sourceTree = "<group>"; };
+		949C8DBD1D32DFA2002991D5 /* InvitationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationDetailViewController.h; sourceTree = "<group>"; };
+		949C8DBE1D32DFA2002991D5 /* InvitationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationDetailViewController.m; sourceTree = "<group>"; };
+		949C8DC11D32DFCA002991D5 /* InvitationHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationHeadCell.h; sourceTree = "<group>"; };
+		949C8DC21D32DFCA002991D5 /* InvitationHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationHeadCell.m; sourceTree = "<group>"; };
+		949C8DC41D32DFDA002991D5 /* InvitedMembersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitedMembersCell.h; sourceTree = "<group>"; };
+		949C8DC51D32DFDA002991D5 /* InvitedMembersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitedMembersCell.m; sourceTree = "<group>"; };
+		949C8DC71D32DFEA002991D5 /* InvitationMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationMessageCell.h; sourceTree = "<group>"; };
+		949C8DC81D32DFEA002991D5 /* InvitationMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationMessageCell.m; sourceTree = "<group>"; };
 		94BB08151CF888D5006B477F /* HOIH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HOIH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BB08191CF888D6006B477F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94BB081B1CF888D6006B477F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949C20FD1D33D97F00F44003 /* MapKit.framework in Frameworks */,
 				C778C3FB2A03242DF28F43E3 /* libPods-HOIH.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +208,7 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
-		94613BBA1CFF0EA9008E517F /* Friends */ = {
+		94613BBA1CFF0EA9008E517F /* Friends Data Source */ = {
 			isa = PBXGroup;
 			children = (
 				9476AFB31D00D77800488C55 /* CDFriends+CoreDataProperties.h */,
@@ -191,7 +218,7 @@
 				94613BCD1CFF103D008E517F /* CDFriendsManager.h */,
 				94613BCE1CFF103D008E517F /* CDFriendsManager.m */,
 			);
-			name = Friends;
+			name = "Friends Data Source";
 			sourceTree = "<group>";
 		};
 		9476AFB91D00DA6D00488C55 /* InvitationDataSource */ = {
@@ -202,6 +229,87 @@
 				9476AFBB1D00DAD200488C55 /* CDInvitationManager.m */,
 			);
 			name = InvitationDataSource;
+			sourceTree = "<group>";
+		};
+		949C20F51D33CCD400F44003 /* Add Invitation */ = {
+			isa = PBXGroup;
+			children = (
+				949C20F61D33CD0C00F44003 /* TypePickerView.h */,
+				949C20F71D33CD0C00F44003 /* TypePickerView.m */,
+				949C20F91D33D2AB00F44003 /* AddInvitationController.h */,
+				949C20FA1D33D2AB00F44003 /* AddInvitationController.m */,
+			);
+			name = "Add Invitation";
+			sourceTree = "<group>";
+		};
+		949C20FE1D33DEB600F44003 /* InvitationControl */ = {
+			isa = PBXGroup;
+			children = (
+				949C20F51D33CCD400F44003 /* Add Invitation */,
+				949C8DBC1D32C659002991D5 /* InvitationDetail */,
+				944D0BF61CFC69DD00BD998E /* Invitation */,
+			);
+			name = InvitationControl;
+			sourceTree = "<group>";
+		};
+		949C20FF1D33DED900F44003 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				943E37E91CFDBDE7002BEFB3 /* ImageUtil */,
+				94E45AD11D002E8500EF976D /* DateUtil */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		949C21001D33DEEF00F44003 /* FriendsControl */ = {
+			isa = PBXGroup;
+			children = (
+				949C21011D33DF0C00F44003 /* Friends */,
+				94613BBA1CFF0EA9008E517F /* Friends Data Source */,
+			);
+			name = FriendsControl;
+			sourceTree = "<group>";
+		};
+		949C21011D33DF0C00F44003 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				949C21051D33DF4400F44003 /* Cell */,
+				949C21021D33DF3600F44003 /* FriendsViewController.h */,
+				949C21031D33DF3600F44003 /* FriendsViewController.m */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
+		949C21051D33DF4400F44003 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				949C21061D33E03400F44003 /* FriendInfoCell.h */,
+				949C21071D33E03400F44003 /* FriendInfoCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		949C8DBC1D32C659002991D5 /* InvitationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				949C8DBD1D32DFA2002991D5 /* InvitationDetailViewController.h */,
+				949C8DBE1D32DFA2002991D5 /* InvitationDetailViewController.m */,
+				949C8DC01D32DFA7002991D5 /* Cells */,
+			);
+			name = InvitationDetail;
+			sourceTree = "<group>";
+		};
+		949C8DC01D32DFA7002991D5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				949C8DC11D32DFCA002991D5 /* InvitationHeadCell.h */,
+				949C8DC21D32DFCA002991D5 /* InvitationHeadCell.m */,
+				949C8DC41D32DFDA002991D5 /* InvitedMembersCell.h */,
+				949C8DC51D32DFDA002991D5 /* InvitedMembersCell.m */,
+				949C8DC71D32DFEA002991D5 /* InvitationMessageCell.h */,
+				949C8DC81D32DFEA002991D5 /* InvitationMessageCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		94BB080C1CF888D5006B477F = {
@@ -236,13 +344,12 @@
 				94BB081F1CF888D6006B477F /* ViewController.m */,
 				94BB08211CF888D6006B477F /* Main.storyboard */,
 				94BB08271CF888D6006B477F /* Assets.xcassets */,
-				944D0BF61CFC69DD00BD998E /* Invitation */,
-				943E37E91CFDBDE7002BEFB3 /* ImageUtil */,
-				94613BBA1CFF0EA9008E517F /* Friends */,
+				949C20FE1D33DEB600F44003 /* InvitationControl */,
+				949C21001D33DEEF00F44003 /* FriendsControl */,
 				94D0478C1D0966DD008161FB /* UserInfo */,
 				94E45ACD1D001F9000EF976D /* APPConfigure */,
 				94E45AD51D006ADE00EF976D /* CoreData */,
-				94E45AD11D002E8500EF976D /* DateUtil */,
+				949C20FF1D33DED900F44003 /* Utils */,
 				94BB08291CF888D6006B477F /* LaunchScreen.storyboard */,
 				94BB082C1CF888D6006B477F /* Info.plist */,
 				94BB08241CF888D6006B477F /* HOIH.xcdatamodeld */,
@@ -325,6 +432,7 @@
 		FC7491AEC89827710EB09328 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				949C20FC1D33D97F00F44003 /* MapKit.framework */,
 				A314704C449E60B188E67A01 /* libPods-HOIH.a */,
 			);
 			name = Frameworks;
@@ -513,12 +621,18 @@
 			files = (
 				9448377E1D01D10D00D73DAE /* CDInvitation+CoreDataProperties.m in Sources */,
 				94BB08201CF888D6006B477F /* ViewController.m in Sources */,
+				949C21081D33E03400F44003 /* FriendInfoCell.m in Sources */,
+				949C20FB1D33D2AB00F44003 /* AddInvitationController.m in Sources */,
 				944D0BF91CFC6AB900BD998E /* InvitationTableViewController.m in Sources */,
 				94613BB91CFEDC0B008E517F /* HOIHHTTPClient.m in Sources */,
 				94D0478F1D096715008161FB /* HOIHUserInfo.m in Sources */,
+				949C21041D33DF3600F44003 /* FriendsViewController.m in Sources */,
 				94E45AD41D002EAF00EF976D /* DateUtil.m in Sources */,
+				949C8DC31D32DFCA002991D5 /* InvitationHeadCell.m in Sources */,
 				9448377F1D01D10D00D73DAE /* CDInvitation.m in Sources */,
 				944D0BFD1CFC74C000BD998E /* InvitationCell.m in Sources */,
+				949C8DC61D32DFDA002991D5 /* InvitedMembersCell.m in Sources */,
+				949C8DBF1D32DFA2002991D5 /* InvitationDetailViewController.m in Sources */,
 				944D0C001CFC891F00BD998E /* InvitedLayer.m in Sources */,
 				9476AFB51D00D77800488C55 /* CDFriends+CoreDataProperties.m in Sources */,
 				9476AFBC1D00DAD200488C55 /* CDInvitationManager.m in Sources */,
@@ -528,7 +642,9 @@
 				94BB081A1CF888D6006B477F /* main.m in Sources */,
 				94613BCC1CFF0F45008E517F /* CDFriends.m in Sources */,
 				94613BCF1CFF103D008E517F /* CDFriendsManager.m in Sources */,
+				949C8DC91D32DFEA002991D5 /* InvitationMessageCell.m in Sources */,
 				943E37EC1CFDBDFB002BEFB3 /* ImageUtil.m in Sources */,
+				949C20F81D33CD0C00F44003 /* TypePickerView.m in Sources */,
 				94E45AD81D006AF800EF976D /* HOIHDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -659,7 +775,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -9,6 +9,8 @@
 #import "ImageUtil.h"
 
 @implementation ImageUtil
+static NSMutableDictionary* imageList;
+static CGFloat savedImageSize = 30;
 + (UIImage*)roundedImage:(UIImage*)image toWidth:(NSInteger)width height:(NSInteger)height{
     // Create a graphics context with the target size
     // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
@@ -16,8 +18,8 @@
     CGSize size = CGSizeMake(width, height);
     CGRect rect = CGRectMake(0.0, 0.0, width, height);
     
-    UIGraphicsBeginImageContext(size);
-    
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // Flip the context because UIKit coordinate system is upside down to Quartz coordinate system
@@ -48,5 +50,24 @@
 }
 + (UIImage*)roundedImage:(UIImage*)image{
     return [self roundedImage:image toWidth:image.size.width height:image.size.height];
+}
+
++ (UIImage*)resizeImage:(NSString*)name{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        imageList = [NSMutableDictionary new];
+        CGFloat photoWidth = savedImageSize;
+        NSArray *imgs = @[@"photo_0",@"photo_1",@"photo_2",@"photo_3",@"photo_4"];
+        for(NSString *imgName in imgs){
+            imageList[imgName] = [self roundedImage:[UIImage imageNamed:imgName] toWidth:photoWidth height:photoWidth];
+            //imageList[imgName] =[UIImage imageNamed:imgName];
+        }
+    });
+    return imageList[[NSString stringWithFormat:@"photo_%@",name]];
+}
+
++ (UIImage*)roundedImageNamed:(NSString*)image toWidth:(NSInteger)width height:(NSInteger)height{
+    NSString *imgName = [NSString stringWithFormat:@"photo_%@",image];
+    return [self roundedImage:[UIImage imageNamed:imgName] toWidth:width height:height];
 }
 @end

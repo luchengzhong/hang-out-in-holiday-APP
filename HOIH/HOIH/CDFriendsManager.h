@@ -18,6 +18,7 @@
 -(NSMutableDictionary*)updateFriends;
 -(NSMutableDictionary*)updateMembers:(NSArray*)memberList;
 -(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateFriends:(id)friends Time:(NSString *)date;
+-(NSMutableDictionary*)getMembersFromCoreData:(NSMutableArray*)usernameList;
 @end
 
 @protocol CDFriendsManagerDelegate <NSObject>
