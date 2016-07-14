@@ -22,14 +22,18 @@
 @interface InvitationDetailViewController (){
     NSArray *memArray;
     NSArray *messageArray;
+    
     UIView *confirmView;
     UIButton *confirmBt;
     UIButton *rejectBt;
-    Boolean showSendMessageCell;
     
+    Boolean showSendMessageCell;
     UIView *sendMessageView;
     
-    NSString *NavTitle;
+    NSString *NavTitle;//navigation title
+    
+    CGRect initialFrame;//head frame
+    HOIHHTTPClient *detailClient;
 }
 
 @end
@@ -78,7 +82,7 @@ static NSInteger invSec = 0;
         }
     }
     self.navigationItem.title = NavTitle;
-    
+    [self initHead];
     [self refreshMessages];
 }
 - (void)didReceiveMemoryWarning {
@@ -93,10 +97,10 @@ static NSInteger invSec = 0;
     [self updateMessage];
 }
 -(void)updateMessage{
-    HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
-    client.delegate = self;
+    detailClient = [[HOIHHTTPClient alloc] initWithStaticURL];
+    detailClient.delegate = self;
     self.navigationItem.title = @"正在载入消息...";
-    [self updateMessageByClient:client];
+    [self updateMessageByClient:detailClient];
 }
 -(void)updateMessageByClient:(HOIHHTTPClient*)client{
     NSString *date = nil;
@@ -105,7 +109,93 @@ static NSInteger invSec = 0;
     }
     [client getMessages:_invitation.iid Time:date];
 }
+#pragma mark - scroll
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(confirmView){
+        CGRect frame = confirmView.frame;
+        frame.origin.y = scrollView.contentOffset.y + self.tableView.frame.size.height - confirmView.frame.size.height - self.tabBarController.tabBar.frame.size.height;
+        confirmView.frame = frame;
+        
+        [self.view bringSubviewToFront:confirmView];
+    }
+    [self updateScrollLayout];
+}
+-(void)updateScrollLayout{
+    CGRect frame = initialFrame;
+    CGRect overlayFrame = initialFrame;
+    CGRect textFrame = initialFrame;
+    //CGRect temp = self.tableView.frame;
+    if(self.tableView.contentOffset.y < 0) {
+        frame.origin.x += self.tableView.contentOffset.y/2;
+        frame.origin.y += self.tableView.contentOffset.y;
+        frame.size.height -= self.tableView.contentOffset.y;
+        //frame.origin.y=-900;
+        frame.size.width -= self.tableView.contentOffset.y;
+        
+        textFrame.origin.y -=self.tableView.contentOffset.y;
+        textFrame.origin.x -=self.tableView.contentOffset.y/2;
+        overlayFrame.origin.x -= self.tableView.contentOffset.y/2;
+        overlayFrame.size.height -= self.tableView.contentOffset.y;
+    }
+    //double dy = frame.origin.y - initialFrame.origin.y -_tripHeaderView.transform.ty;
+    //_tripHeaderView.transform = CGAffineTransformMakeTranslation(0,
+    //                                                            -900);
+    //[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    //self.tableView.tableHeaderView.frame = frame;
+    
+    _headImageView.frame = frame;
+    //_headView.frame = textFrame;
+    //_tripHeaderView.bounds = frame;
+    //[self.tableView setTableHeaderView:_tripHeaderView];
+}
+
 #pragma mark - Views
+-(void)initHead{
+    if(!_invitation)
+        return;
+    CDFriends *invitor = _userInfoDict[_invitation.inviter_id];
+    _invitorPhotoView.image =
+    [ImageUtil roundedImageNamed:invitor.photo
+                         toWidth:_invitorPhotoView.frame.size.width
+                          height:_invitorPhotoView.frame.size.height];
+    _invitorNameLabel.text = invitor.name;
+    _inviteTimeLabel.text = [DateUtil formatDateFromDate:_invitation.invite_time Type:@"Normal"];
+   /* if(_invitation.place_name)
+        .text = _invitation.place_name;
+    else
+        _placeLabel.text = @"未指定地点";*/
+    if(_invitation.comment && [_invitation.comment length]>0){
+        _commentLabel.text = _invitation.comment;
+    }
+    _typeImageView.image = [ImageUtil typeImage:_invitation.type];
+    _typeLabel.text = _invitation.type;
+    //_headImageView.contentMode = UIViewContentModeScaleAspectFit;
+    _headImageView.image = [UIImage imageNamed:@"detail_bg2"];
+    initialFrame = _headImageView.frame;
+    [_headView sendSubviewToBack:_headImageView];
+    
+    [self.tableView bringSubviewToFront:self.refreshControl];
+    [self.refreshControl setTintColor:[UIColor whiteColor]];
+    
+    [self updateScrollLayout];
+    [self.tableView scrollsToTop];
+    
+    [self.tableView setTableHeaderView:_headView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self updateScrollLayout];
+    });
+    /*dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        UIImage *bk = [ImageUtil typeGaussImage:_invitation.type];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(_headImageView){
+                _headImageView.contentMode = UIViewContentModeScaleToFill;
+                _headImageView.image = bk;
+                [_headView sendSubviewToBack:_headImageView];
+                _headView.backgroundColor = [UIColor colorWithPatternImage:bk];
+            }
+        });
+    });*/
+}
 -(void)addRejectView{
     self.navigationItem.title = @"已拒绝";
 }
@@ -150,13 +240,7 @@ static NSInteger invSec = 0;
     
     [self.tableView scrollsToTop];
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGRect frame = confirmView.frame;
-    frame.origin.y = scrollView.contentOffset.y + self.tableView.frame.size.height - confirmView.frame.size.height - self.tabBarController.tabBar.frame.size.height;
-    confirmView.frame = frame;
-    
-    [self.view bringSubviewToFront:confirmView];
-}
+
 
 #pragma mark - Action
 -(void)confirmInv{

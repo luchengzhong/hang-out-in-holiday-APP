@@ -23,7 +23,7 @@
     // Configure the view for the selected state
 }
 -(void)setInvitation:(CDInvitation*)invitation Invitor:(CDFriends*)invitor{
-    _inviterPhotoView.image =
+    /*_inviterPhotoView.image =
     [ImageUtil roundedImageNamed:invitor.photo
                          toWidth:_inviterPhotoView.frame.size.width
                           height:_inviterPhotoView.frame.size.height];
@@ -32,6 +32,6 @@
     if(invitation.place_name)
         _placeLabel.text = invitation.place_name;
     else
-        _placeLabel.text = @"未指定地点";
+        _placeLabel.text = @"未指定地点";*/
 }
 @end

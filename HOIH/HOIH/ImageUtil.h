@@ -15,4 +15,5 @@
 + (UIImage*)roundedImage:(UIImage*)image;
 + (UIImage*)resizeImage:(NSString*)name;
 + (UIImage*)typeImage:(NSString*)type;
++ (UIImage*)typeGaussImage:(NSString*)type;
 @end

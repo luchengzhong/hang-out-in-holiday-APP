@@ -11,6 +11,18 @@
 #import "HOIHHTTPClient.h"
 
 @interface InvitationDetailViewController : UITableViewController <HOIHHTTPClientDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *invitorPhotoView;
+@property (weak, nonatomic) IBOutlet UILabel *invitorNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *inviteTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UIView *headView;
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *typeImageView;
+
+
+
+
 @property CDInvitation *invitation;
 @property NSDictionary *userInfoDict;
 

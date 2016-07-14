@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940B375D1D38317900F7AE8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 940B375C1D38317900F7AE8F /* Assets.xcassets */; };
 		943E37EC1CFDBDFB002BEFB3 /* ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 943E37EB1CFDBDFB002BEFB3 /* ImageUtil.m */; };
 		9448377E1D01D10D00D73DAE /* CDInvitation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9448377B1D01D10D00D73DAE /* CDInvitation+CoreDataProperties.m */; };
 		9448377F1D01D10D00D73DAE /* CDInvitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9448377D1D01D10D00D73DAE /* CDInvitation.m */; };
@@ -35,7 +36,6 @@
 		94BB08201CF888D6006B477F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB081F1CF888D6006B477F /* ViewController.m */; };
 		94BB08231CF888D6006B477F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BB08211CF888D6006B477F /* Main.storyboard */; };
 		94BB08261CF888D6006B477F /* HOIH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08241CF888D6006B477F /* HOIH.xcdatamodeld */; };
-		94BB08281CF888D6006B477F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BB08271CF888D6006B477F /* Assets.xcassets */; };
 		94BB082B1CF888D6006B477F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BB08291CF888D6006B477F /* LaunchScreen.storyboard */; };
 		94BB08361CF888D6006B477F /* HOIHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08351CF888D6006B477F /* HOIHTests.m */; };
 		94BB08411CF888D6006B477F /* HOIHUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08401CF888D6006B477F /* HOIHUITests.m */; };
@@ -68,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		74782950640EF70BE2697704 /* Pods-HOIH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HOIH/Pods-HOIH.debug.xcconfig"; sourceTree = "<group>"; };
+		940B375C1D38317900F7AE8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		943E37EA1CFDBDFB002BEFB3 /* ImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtil.h; sourceTree = "<group>"; };
 		943E37EB1CFDBDFB002BEFB3 /* ImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtil.m; sourceTree = "<group>"; };
 		9448377A1D01D10D00D73DAE /* CDInvitation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDInvitation+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 		94BB081F1CF888D6006B477F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		94BB08221CF888D6006B477F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94BB08251CF888D6006B477F /* HOIH.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HOIH.xcdatamodel; sourceTree = "<group>"; };
-		94BB08271CF888D6006B477F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94BB082A1CF888D6006B477F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94BB082C1CF888D6006B477F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94BB08311CF888D6006B477F /* HOIHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HOIHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,7 +397,7 @@
 				94BB081E1CF888D6006B477F /* ViewController.h */,
 				94BB081F1CF888D6006B477F /* ViewController.m */,
 				94BB08211CF888D6006B477F /* Main.storyboard */,
-				94BB08271CF888D6006B477F /* Assets.xcassets */,
+				940B375C1D38317900F7AE8F /* Assets.xcassets */,
 				949C20FE1D33DEB600F44003 /* InvitationControl */,
 				949C21001D33DEEF00F44003 /* FriendsControl */,
 				94D0478C1D0966DD008161FB /* UserInfo */,
@@ -599,7 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94BB082B1CF888D6006B477F /* LaunchScreen.storyboard in Resources */,
-				94BB08281CF888D6006B477F /* Assets.xcassets in Resources */,
+				940B375D1D38317900F7AE8F /* Assets.xcassets in Resources */,
 				94BB08231CF888D6006B477F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
