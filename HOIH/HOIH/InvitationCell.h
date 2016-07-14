@@ -13,9 +13,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *invitorPhoto;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UIView *invitedContent;
 @property (weak, nonatomic) IBOutlet UIView *backgroundRecView;
+@property (weak, nonatomic) IBOutlet UIImageView *typeImage;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 
 @property CDInvitation *invitation;
 @property NSDictionary* memberList;

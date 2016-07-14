@@ -33,17 +33,18 @@
     }
     return self;
 }
--(UIView*) getInvitedLayer:(NSArray*)members SourceView:(UIView*)sourceView MemberInfo:(NSDictionary*)memberInfo{
+-(UIView*) getInvitedLayer:(NSArray*)members SourceView:(UIView*)sourceView{
     UIView* invitedView = [[UIView alloc] initWithFrame:CGRectMake(0,0,sourceView.frame.size.width,sourceView.frame.size.height)];
     invitedView.layer.contentsScale = [UIScreen mainScreen].scale;
     CGFloat xPoint = _gap;
     CGFloat yPoing = _gap;
     NSInteger numberPerRow = invitedView.frame.size.width / (xPoint+photoWidth);
     NSInteger i=0;
-    for(i=0;i<[members count];i++){
+    NSInteger count = [members count];
+    for(i=0;i<count;i++){
         [invitedView addSubview:({
             UIImageView *subView = [[UIImageView alloc] initWithFrame:CGRectMake(xPoint, yPoing, photoWidth, photoWidth)];
-            CDFriends *mem = memberInfo[members[i][@"UID"]];
+            CDFriends *mem = members[i];
             subView.layer.contentsScale = [UIScreen mainScreen].scale;
             subView.image = [ImageUtil resizeImage:mem.photo];
             //[self convertToRoundImage:subView BorderColor:[UIColor whiteColor] BorderWidth:2.0f];
@@ -62,6 +63,15 @@
     }
     
     return invitedView;
+
+}
+-(UIView*) getInvitedLayer:(NSArray*)members SourceView:(UIView*)sourceView MemberInfo:(NSDictionary*)memberInfo{
+    NSMutableArray *cdMembers = [NSMutableArray new];
+    for(NSDictionary *mem in members){
+        [cdMembers addObject:memberInfo[mem[@"UID"]]];
+    }
+    
+    return [self getInvitedLayer:cdMembers SourceView:sourceView];
 }
 
 #pragma mark - image utils

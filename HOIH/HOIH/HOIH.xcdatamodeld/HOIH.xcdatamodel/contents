@@ -15,12 +15,23 @@
         <attribute name="invite_time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="inviter_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="members" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pay_method" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="place_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="update_time" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="CDMessage" representedClassName="CDMessage" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="iid" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="mid" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="CDFriends" positionX="0" positionY="0" width="128" height="118"/>
-        <element name="CDInvitation" positionX="-288" positionY="68" width="128" height="195"/>
+        <element name="CDInvitation" positionX="-288" positionY="68" width="128" height="225"/>
+        <element name="CDMessage" positionX="-144" positionY="108" width="128" height="135"/>
     </elements>
 </model>

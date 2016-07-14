@@ -70,4 +70,24 @@ static CGFloat savedImageSize = 30;
     NSString *imgName = [NSString stringWithFormat:@"photo_%@",image];
     return [self roundedImage:[UIImage imageNamed:imgName] toWidth:width height:height];
 }
+
++ (UIImage*)typeImage:(NSString*)type{
+    if(!type){
+        type = @"其他";
+    }
+    NSString *imgName;
+    NSDictionary *typeNames = @{@"桌游":@"desk_game",
+                                @"聚餐":@"eat",
+                                @"开黑":@"vedio_game",
+                                @"KTV":@"ktv",
+                                @"旅游":@"travel",
+                                @"Party":@"party",
+                                @"其他":@"party"};
+    imgName = typeNames[type];
+    if(!imgName){
+        imgName = @"party";
+    }
+    return [UIImage imageNamed:imgName];
+    
+}
 @end

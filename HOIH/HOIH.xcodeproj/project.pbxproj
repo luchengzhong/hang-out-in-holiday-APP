@@ -16,6 +16,9 @@
 		94613BB91CFEDC0B008E517F /* HOIHHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 94613BB81CFEDC0B008E517F /* HOIHHTTPClient.m */; };
 		94613BCC1CFF0F45008E517F /* CDFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = 94613BCA1CFF0F45008E517F /* CDFriends.m */; };
 		94613BCF1CFF103D008E517F /* CDFriendsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94613BCE1CFF103D008E517F /* CDFriendsManager.m */; };
+		9467091E1D34D74A00298472 /* AddMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9467091D1D34D74A00298472 /* AddMemberController.m */; };
+		946709221D351AD300298472 /* AddPlaceMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946709211D351AD300298472 /* AddPlaceMapViewController.m */; };
+		9472FD281D365F80001E1472 /* InvSendMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9472FD271D365F80001E1472 /* InvSendMessageCell.m */; };
 		9476AFB51D00D77800488C55 /* CDFriends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476AFB41D00D77800488C55 /* CDFriends+CoreDataProperties.m */; };
 		9476AFBC1D00DAD200488C55 /* CDInvitationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476AFBB1D00DAD200488C55 /* CDInvitationManager.m */; };
 		949C20F81D33CD0C00F44003 /* TypePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C20F71D33CD0C00F44003 /* TypePickerView.m */; };
@@ -37,6 +40,9 @@
 		94BB08361CF888D6006B477F /* HOIHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08351CF888D6006B477F /* HOIHTests.m */; };
 		94BB08411CF888D6006B477F /* HOIHUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB08401CF888D6006B477F /* HOIHUITests.m */; };
 		94D0478F1D096715008161FB /* HOIHUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D0478E1D096715008161FB /* HOIHUserInfo.m */; };
+		94DBE4231D369DD200AB432F /* CDMessage+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE4201D369DD200AB432F /* CDMessage+CoreDataProperties.m */; };
+		94DBE4241D369DD200AB432F /* CDMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE4221D369DD200AB432F /* CDMessage.m */; };
+		94DBE4271D369F8900AB432F /* CDMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE4261D369F8900AB432F /* CDMessageManager.m */; };
 		94E45AD01D001FB700EF976D /* HOIHConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45ACF1D001FB700EF976D /* HOIHConfigure.m */; };
 		94E45AD41D002EAF00EF976D /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45AD31D002EAF00EF976D /* DateUtil.m */; };
 		94E45AD81D006AF800EF976D /* HOIHDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45AD71D006AF800EF976D /* HOIHDataManager.m */; };
@@ -80,6 +86,12 @@
 		94613BCA1CFF0F45008E517F /* CDFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFriends.m; sourceTree = "<group>"; };
 		94613BCD1CFF103D008E517F /* CDFriendsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFriendsManager.h; sourceTree = "<group>"; };
 		94613BCE1CFF103D008E517F /* CDFriendsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFriendsManager.m; sourceTree = "<group>"; };
+		9467091C1D34D74A00298472 /* AddMemberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMemberController.h; sourceTree = "<group>"; };
+		9467091D1D34D74A00298472 /* AddMemberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMemberController.m; sourceTree = "<group>"; };
+		946709201D351AD300298472 /* AddPlaceMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlaceMapViewController.h; sourceTree = "<group>"; };
+		946709211D351AD300298472 /* AddPlaceMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlaceMapViewController.m; sourceTree = "<group>"; };
+		9472FD261D365F80001E1472 /* InvSendMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvSendMessageCell.h; sourceTree = "<group>"; };
+		9472FD271D365F80001E1472 /* InvSendMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvSendMessageCell.m; sourceTree = "<group>"; };
 		9476AFB31D00D77800488C55 /* CDFriends+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDFriends+CoreDataProperties.h"; sourceTree = "<group>"; };
 		9476AFB41D00D77800488C55 /* CDFriends+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDFriends+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9476AFBA1D00DAD200488C55 /* CDInvitationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDInvitationManager.h; sourceTree = "<group>"; };
@@ -120,6 +132,12 @@
 		94BB08421CF888D6006B477F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94D0478D1D096715008161FB /* HOIHUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOIHUserInfo.h; sourceTree = "<group>"; };
 		94D0478E1D096715008161FB /* HOIHUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOIHUserInfo.m; sourceTree = "<group>"; };
+		94DBE41F1D369DD200AB432F /* CDMessage+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDMessage+CoreDataProperties.h"; sourceTree = "<group>"; };
+		94DBE4201D369DD200AB432F /* CDMessage+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDMessage+CoreDataProperties.m"; sourceTree = "<group>"; };
+		94DBE4211D369DD200AB432F /* CDMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMessage.h; sourceTree = "<group>"; };
+		94DBE4221D369DD200AB432F /* CDMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMessage.m; sourceTree = "<group>"; };
+		94DBE4251D369F8900AB432F /* CDMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMessageManager.h; sourceTree = "<group>"; };
+		94DBE4261D369F8900AB432F /* CDMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMessageManager.m; sourceTree = "<group>"; };
 		94E45ACE1D001FB700EF976D /* HOIHConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOIHConfigure.h; sourceTree = "<group>"; };
 		94E45ACF1D001FB700EF976D /* HOIHConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOIHConfigure.m; sourceTree = "<group>"; };
 		94E45AD21D002EAF00EF976D /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
@@ -221,6 +239,37 @@
 			name = "Friends Data Source";
 			sourceTree = "<group>";
 		};
+		9467091B1D34D72B00298472 /* Add Member */ = {
+			isa = PBXGroup;
+			children = (
+				9467091C1D34D74A00298472 /* AddMemberController.h */,
+				9467091D1D34D74A00298472 /* AddMemberController.m */,
+			);
+			name = "Add Member";
+			sourceTree = "<group>";
+		};
+		9467091F1D351AB000298472 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				946709201D351AD300298472 /* AddPlaceMapViewController.h */,
+				946709211D351AD300298472 /* AddPlaceMapViewController.m */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
+		9472FD291D368197001E1472 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				94DBE41F1D369DD200AB432F /* CDMessage+CoreDataProperties.h */,
+				94DBE4201D369DD200AB432F /* CDMessage+CoreDataProperties.m */,
+				94DBE4211D369DD200AB432F /* CDMessage.h */,
+				94DBE4221D369DD200AB432F /* CDMessage.m */,
+				94DBE4251D369F8900AB432F /* CDMessageManager.h */,
+				94DBE4261D369F8900AB432F /* CDMessageManager.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
 		9476AFB91D00DA6D00488C55 /* InvitationDataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +287,8 @@
 				949C20F71D33CD0C00F44003 /* TypePickerView.m */,
 				949C20F91D33D2AB00F44003 /* AddInvitationController.h */,
 				949C20FA1D33D2AB00F44003 /* AddInvitationController.m */,
+				9467091B1D34D72B00298472 /* Add Member */,
+				9467091F1D351AB000298472 /* MapView */,
 			);
 			name = "Add Invitation";
 			sourceTree = "<group>";
@@ -248,6 +299,7 @@
 				949C20F51D33CCD400F44003 /* Add Invitation */,
 				949C8DBC1D32C659002991D5 /* InvitationDetail */,
 				944D0BF61CFC69DD00BD998E /* Invitation */,
+				9472FD291D368197001E1472 /* Message */,
 			);
 			name = InvitationControl;
 			sourceTree = "<group>";
@@ -308,6 +360,8 @@
 				949C8DC51D32DFDA002991D5 /* InvitedMembersCell.m */,
 				949C8DC71D32DFEA002991D5 /* InvitationMessageCell.h */,
 				949C8DC81D32DFEA002991D5 /* InvitationMessageCell.m */,
+				9472FD261D365F80001E1472 /* InvSendMessageCell.h */,
+				9472FD271D365F80001E1472 /* InvSendMessageCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -624,10 +678,12 @@
 				949C21081D33E03400F44003 /* FriendInfoCell.m in Sources */,
 				949C20FB1D33D2AB00F44003 /* AddInvitationController.m in Sources */,
 				944D0BF91CFC6AB900BD998E /* InvitationTableViewController.m in Sources */,
+				9472FD281D365F80001E1472 /* InvSendMessageCell.m in Sources */,
 				94613BB91CFEDC0B008E517F /* HOIHHTTPClient.m in Sources */,
 				94D0478F1D096715008161FB /* HOIHUserInfo.m in Sources */,
 				949C21041D33DF3600F44003 /* FriendsViewController.m in Sources */,
 				94E45AD41D002EAF00EF976D /* DateUtil.m in Sources */,
+				94DBE4231D369DD200AB432F /* CDMessage+CoreDataProperties.m in Sources */,
 				949C8DC31D32DFCA002991D5 /* InvitationHeadCell.m in Sources */,
 				9448377F1D01D10D00D73DAE /* CDInvitation.m in Sources */,
 				944D0BFD1CFC74C000BD998E /* InvitationCell.m in Sources */,
@@ -635,14 +691,18 @@
 				949C8DBF1D32DFA2002991D5 /* InvitationDetailViewController.m in Sources */,
 				944D0C001CFC891F00BD998E /* InvitedLayer.m in Sources */,
 				9476AFB51D00D77800488C55 /* CDFriends+CoreDataProperties.m in Sources */,
+				94DBE4241D369DD200AB432F /* CDMessage.m in Sources */,
 				9476AFBC1D00DAD200488C55 /* CDInvitationManager.m in Sources */,
 				94E45AD01D001FB700EF976D /* HOIHConfigure.m in Sources */,
+				946709221D351AD300298472 /* AddPlaceMapViewController.m in Sources */,
 				94BB08261CF888D6006B477F /* HOIH.xcdatamodeld in Sources */,
 				94BB081D1CF888D6006B477F /* AppDelegate.m in Sources */,
 				94BB081A1CF888D6006B477F /* main.m in Sources */,
 				94613BCC1CFF0F45008E517F /* CDFriends.m in Sources */,
 				94613BCF1CFF103D008E517F /* CDFriendsManager.m in Sources */,
 				949C8DC91D32DFEA002991D5 /* InvitationMessageCell.m in Sources */,
+				94DBE4271D369F8900AB432F /* CDMessageManager.m in Sources */,
+				9467091E1D34D74A00298472 /* AddMemberController.m in Sources */,
 				943E37EC1CFDBDFB002BEFB3 /* ImageUtil.m in Sources */,
 				949C20F81D33CD0C00F44003 /* TypePickerView.m in Sources */,
 				94E45AD81D006AF800EF976D /* HOIHDataManager.m in Sources */,

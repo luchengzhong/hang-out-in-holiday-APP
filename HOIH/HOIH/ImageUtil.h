@@ -14,4 +14,5 @@
 + (UIImage*)roundedImage:(UIImage*)image toWidth:(NSInteger)width height:(NSInteger)height;
 + (UIImage*)roundedImage:(UIImage*)image;
 + (UIImage*)resizeImage:(NSString*)name;
++ (UIImage*)typeImage:(NSString*)type;
 @end

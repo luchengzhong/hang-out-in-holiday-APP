@@ -13,4 +13,7 @@
 @interface InvitationDetailViewController : UITableViewController <HOIHHTTPClientDelegate>
 @property CDInvitation *invitation;
 @property NSDictionary *userInfoDict;
+
+-(void)updateMessage;
+-(void)updateMessageByClient:(HOIHHTTPClient*)client;
 @end

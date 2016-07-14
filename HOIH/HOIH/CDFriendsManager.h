@@ -14,7 +14,7 @@
 @interface CDFriendsManager : HOIHDataManager <HOIHHTTPClientDelegate>
 @property id<CDFriendsManagerDelegate> delegate;
 
-
+-(NSMutableDictionary*)getFriendsFromCoreData;
 -(NSMutableDictionary*)updateFriends;
 -(NSMutableDictionary*)updateMembers:(NSArray*)memberList;
 -(void)HOIHHTTPClient:(HOIHHTTPClient *)client didUpdateFriends:(id)friends Time:(NSString *)date;

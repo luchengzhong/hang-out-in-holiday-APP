@@ -23,25 +23,36 @@
     // Configure the view for the selected state
 }
 
--(void)setMessageDict:(NSDictionary *)messageDict Photo:(CDFriends*)sender{
-    _messageDict = messageDict;
-    _sender = sender;
-    if(_messageDict){
-        NSString *type =_messageDict[@"type"];
+-(void)setMessage:(CDMessage *)message SenderName:(NSString*)name SenderPhoto:(NSString*)photo{
+    _cdMessage = message;
+    if(_cdMessage){
+        NSString *type =_cdMessage.type;
         NSString *content = @"";
         if([type isEqualToString:@"change_place"]){
-            content = [NSString stringWithFormat:@"修改了地点：%@",_messageDict[@"content"]];
+            content = [NSString stringWithFormat:@"修改了地点：%@",_cdMessage.content];
         }else if([type isEqualToString:@"change_time"]){
-            content = [NSString stringWithFormat:@"修改了时间：%@",_messageDict[@"content"]];
+            content = [NSString stringWithFormat:@"修改了时间：%@",_cdMessage.content];
+        }else if([type isEqualToString:@"user_comment"]){
+            content = _cdMessage.content;
         }else if([type isEqualToString:@"change_comment"]){
-            content = _messageDict[@"content"];
+            content = [NSString stringWithFormat:@"修改了备注：%@",_cdMessage.content];
+        }else if([type isEqualToString:@"change_status"]){
+            content = _cdMessage.content;
+            if([content isEqualToString:@"1"]){
+                content = @"接受了邀请";
+            }else{
+                content = @"拒绝了邀请";
+            }
         }
         _contentLabel.text = content;
     }
-    if(_sender){
-        _photoView.image = [ImageUtil roundedImageNamed:_sender.photo
+    if(name){
+        _senderNameLabel.text = name;
+        
+    }
+    if(photo){
+        _photoView.image = [ImageUtil roundedImageNamed:photo
                                                 toWidth:_photoView.frame.size.width height:_photoView.frame.size.height];
-        _senderNameLabel.text = _sender.name;
     }
 }
 @end

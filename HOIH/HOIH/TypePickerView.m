@@ -40,4 +40,8 @@
 {
     return _pickerData[row];
 }
+
+-(NSString*)selectedString{
+    return _pickerData[[self selectedRowInComponent:0]];
+}
 @end

@@ -12,4 +12,5 @@
 @property NSArray* pickerData;
 
 -(void)attachData;
+-(NSString*)selectedString;
 @end

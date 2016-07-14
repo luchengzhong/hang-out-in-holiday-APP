@@ -10,5 +10,5 @@
 #import "CDInvitationManager.h"
 
 @interface InvitationTableViewController : UITableViewController <CDInvitationManagerDelegate, CDFriendsManagerDelegate>
-
+-(void)refresh;
 @end

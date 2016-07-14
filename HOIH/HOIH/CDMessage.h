@@ -1,8 +1,8 @@
 //
-//  CDInvitation.h
+//  CDMessage.h
 //  HOIH
 //
-//  Created by 钟路成 on 16/6/3.
+//  Created by 钟路成 on 16/7/13.
 //  Copyright © 2016年 Lucheng Zhong. All rights reserved.
 //
 
@@ -11,14 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CDInvitation : NSManagedObject
+@interface CDMessage : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
--(BOOL)setMembersWithArray:(NSArray*)array;
--(NSArray*)getMembersArray;
--(void)setDict:(NSDictionary*)item;
+
+-(void)setMessageDict:(NSDictionary*)dict;
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "CDInvitation+CoreDataProperties.h"
+#import "CDMessage+CoreDataProperties.h"

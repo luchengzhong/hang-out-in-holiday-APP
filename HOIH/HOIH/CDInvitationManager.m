@@ -96,33 +96,15 @@ static NSString *configureName = @"InvitationUpdateTime";
                     cdInvitation = [NSEntityDescription insertNewObjectForEntityForName:invEntityName
                                                                  inManagedObjectContext:[super sharedContext]];
             }
-            [cdInvitation setIid:item[@"IID"]];
-            [cdInvitation setStatus:item[@"status"]];
-            [cdInvitation setInviter_id:item[@"inviter_id"]];
             
-            [cdInvitation setUpdate_time:[DateUtil dateFromString:item[@"update_time"]]];
-            [cdInvitation setCreate_time:[DateUtil dateFromString:item[@"create_time"]]];
-            [cdInvitation setInvite_time:[DateUtil dateFromString:item[@"invite_time"]]];
-            
-            id coordinate = item[@"coordinate"];
-            if(coordinate && coordinate != [NSNull null]){
-                [cdInvitation setCoordinate:(NSString*)coordinate];
-            }
-            id place_name = item[@"place_name"];
-            if(place_name && place_name != [NSNull null]){
-                [cdInvitation setPlace_name:(NSString*)place_name];
-            }
-            id comment = item[@"comment"];
-            if(comment && comment != [NSNull null]){
-                [cdInvitation setComment:(NSString*)comment];
-            }
+            [cdInvitation setDict:item];
             
             NSArray *mems = item[@"invited_members"];
-            [cdInvitation setMembersWithArray:mems];
             for(NSDictionary* memItem in mems){
                 memsUsername[memItem[@"UID"]] = [NSNumber numberWithBool:YES];
             }
             invitationDict[iid] = cdInvitation;
+            
             
         }
         NSArray *memUsernames=[memsUsername allKeys];

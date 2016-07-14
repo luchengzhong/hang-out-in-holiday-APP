@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"假日潇洒小组";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -50,7 +51,7 @@
                   forControlEvents:UIControlEventValueChanged];
     
     [self refresh];
-    [self.refreshControl beginRefreshing];
+    
     /*if(spinner == nil){
         spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         CGRect rect = [[UIScreen mainScreen] bounds];
@@ -61,7 +62,6 @@
     }
     [self.tableView addSubview:spinner]; // spinner is not visible until started
     [spinner startAnimating];*/
-    self.navigationItem.title = @"假日潇洒小组";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,17 +74,21 @@
     invManager.delegate = self;
     invitationList = [invManager updateInvitationsForPage:0];
     membersList = invManager.membersDict;
+    [self.refreshControl beginRefreshing];
+    [self.tableView setContentOffset:CGPointMake(0, -self.refreshControl.frame.size.height) animated:YES];
 }
 
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 18.0f;
+    return 0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 18.0f;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    if(invitationList)
+        return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

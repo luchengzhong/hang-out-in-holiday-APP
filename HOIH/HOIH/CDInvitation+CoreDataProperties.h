@@ -2,7 +2,7 @@
 //  CDInvitation+CoreDataProperties.h
 //  HOIH
 //
-//  Created by 钟路成 on 16/7/6.
+//  Created by 钟路成 on 16/7/14.
 //  Copyright © 2016年 Lucheng Zhong. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *place_name;
 @property (nullable, nonatomic, retain) NSString *status;
 @property (nullable, nonatomic, retain) NSDate *update_time;
+@property (nullable, nonatomic, retain) NSString *type;
+@property (nullable, nonatomic, retain) NSString *pay_method;
 
 @end
 

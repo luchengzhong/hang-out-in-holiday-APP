@@ -82,8 +82,11 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
 
 
 #pragma mark - Friends
+-(NSMutableDictionary*)getFriendsFromCoreData{
+    return [self getUserInfoList:@"isFriend = true"];
+}
 -(NSMutableDictionary*)updateFriends{
-    friendsList = [self getUserInfoList:@"isFriend = true"];
+    friendsList = [self getFriendsFromCoreData];
     updateTime = [self friendsUpdateTime];
     HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
     client.delegate = self;
