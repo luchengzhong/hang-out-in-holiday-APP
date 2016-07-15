@@ -69,6 +69,10 @@ static CGFloat savedImageSize = 30;
     return imageList[[NSString stringWithFormat:@"photo_%@",name]];
 }
 
++ (UIImage*)imageShortNamed:(NSString*)shortName{
+    return [UIImage imageNamed:[NSString stringWithFormat:@"photo_%@",shortName]];
+}
+
 + (UIImage*)roundedImageNamed:(NSString*)image toWidth:(NSInteger)width height:(NSInteger)height{
     NSString *imgName = [NSString stringWithFormat:@"photo_%@",image];
     return [self roundedImage:[UIImage imageNamed:imgName] toWidth:width height:height];

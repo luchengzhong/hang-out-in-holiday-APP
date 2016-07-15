@@ -39,6 +39,10 @@
     CGFloat xPoint = _gap;
     CGFloat yPoing = _gap;
     NSInteger numberPerRow = invitedView.frame.size.width / (xPoint+photoWidth);
+    if(numberPerRow >= [members count]){
+        yPoing = invitedView.frame.size.height / 2 -photoWidth/2;
+    }
+    
     NSInteger i=0;
     NSInteger count = [members count];
     for(i=0;i<count;i++){

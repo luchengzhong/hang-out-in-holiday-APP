@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <MapKit/MapKit.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    NSMutableArray *array = [NSMutableArray arrayWithArray:tabBarController.viewControllers];
+    /*UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.navigationController];*/
+    LGSideMenuController *sideMenuController = [[LGSideMenuController alloc] initWithRootViewController:array[0]];
+    
+    [sideMenuController setLeftViewEnabledWithWidth:250.f
+                                  presentationStyle:LGSideMenuPresentationStyleScaleFromBig
+                               alwaysVisibleOptions:0];
+    
+    UITableViewController *leftViewController = [UITableViewController new];
+    [sideMenuController.leftView addSubview:leftViewController.tableView];
+    sideMenuController.leftViewStatusBarStyle = UIStatusBarStyleDefault;
+
+    array[0] = sideMenuController;
+    
+    tabBarController.viewControllers = array;
+    
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"home_item"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem1.image = [[UIImage imageNamed:@"home_item"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem1.title = NSLocalizedString (@"Sök resa", nil);
+    
+    _mainPageController=sideMenuController;
+    
+    
     return YES;
 }
 

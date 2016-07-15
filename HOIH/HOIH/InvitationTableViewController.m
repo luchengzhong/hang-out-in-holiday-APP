@@ -12,6 +12,9 @@
 #import "HOIHHTTPClient.h"
 #import "DateUtil.h"
 #import "InvitationDetailViewController.h"
+#import <MapKit/MapKit.h>
+#import <LGSideMenuController.h>
+#import "AppDelegate.h"
 
 @interface InvitationTableViewController ()
 
@@ -40,7 +43,8 @@
     //fm = [CDFriendsManager new];
     //[fm updateFriends];
     
-    
+    //self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"detail_bg3"]];
+    self.tableView.backgroundColor =[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     //self.refreshControl.backgroundColor = [UIColor whiteColor];
@@ -62,6 +66,8 @@
     }
     [self.tableView addSubview:spinner]; // spinner is not visible until started
     [spinner startAnimating];*/
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,11 +85,12 @@
 }
 
 #pragma mark - Table view data source
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 18.0f;
+    return 0;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if(invitationList)
@@ -154,6 +161,12 @@
         controller.invitation = invitationList[self.tableView.indexPathForSelectedRow.row];
         controller.userInfoDict = membersList;
     }
+}
+- (IBAction)showProfile:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    LGSideMenuController *controller = appDelegate.mainPageController;
+    if(controller)
+        [controller showLeftViewAnimated:YES completionHandler:nil];
 }
 
 

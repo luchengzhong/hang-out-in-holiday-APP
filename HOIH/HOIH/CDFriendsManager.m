@@ -20,11 +20,13 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
     NSMutableDictionary *friendsList;
     NSString *configureName;
     dispatch_queue_t updateQueue;
+    HOIHHTTPClient *client;
 }
 -(id)init{
     self = [super init];
     if(self){
         updateQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
+        client = [[HOIHHTTPClient alloc] initWithStaticURL];
     }
     return self;
 }
@@ -74,7 +76,7 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
     
     configureName = configureMemberTimesName;
     updateTime = [[HOIHConfigure _sharedInstance] getConfigueValueForKey:configureName];
-    HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
+    
     client.delegate = self;
     [client getMembers:memberList];
     return friendsList;
@@ -88,7 +90,6 @@ static NSString* configureMemberTimesName = @"MembersUpdateTime";
 -(NSMutableDictionary*)updateFriends{
     friendsList = [self getFriendsFromCoreData];
     updateTime = [self friendsUpdateTime];
-    HOIHHTTPClient *client = [HOIHHTTPClient sharedHTTPClient];
     client.delegate = self;
     [client getFriends:@"luchengzhong" Time:updateTime];
     return friendsList;

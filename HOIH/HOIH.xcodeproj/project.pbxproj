@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D261540BE18780F0BABB107 /* libPods-HOIH.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C541FA1C8D1B5C4A5129FAF /* libPods-HOIH.a */; };
+		6764A3AB45D9C6580E53ABBB /* libPods-HOIHUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E86CA5AF6D9AE5A5A18165A /* libPods-HOIHUITests.a */; };
+		9404D0B31D38CD66000CDA25 /* InvitationMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9404D0B21D38CD66000CDA25 /* InvitationMapCell.m */; };
+		9404D0B61D38CF04000CDA25 /* InvitedMembersCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9404D0B51D38CF04000CDA25 /* InvitedMembersCollectionCell.m */; };
+		9404D0BC1D38D254000CDA25 /* MemberCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9404D0BB1D38D254000CDA25 /* MemberCollectionCell.m */; };
 		940B375D1D38317900F7AE8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 940B375C1D38317900F7AE8F /* Assets.xcassets */; };
 		943E37EC1CFDBDFB002BEFB3 /* ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 943E37EB1CFDBDFB002BEFB3 /* ImageUtil.m */; };
 		9448377E1D01D10D00D73DAE /* CDInvitation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9448377B1D01D10D00D73DAE /* CDInvitation+CoreDataProperties.m */; };
@@ -46,7 +51,7 @@
 		94E45AD01D001FB700EF976D /* HOIHConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45ACF1D001FB700EF976D /* HOIHConfigure.m */; };
 		94E45AD41D002EAF00EF976D /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45AD31D002EAF00EF976D /* DateUtil.m */; };
 		94E45AD81D006AF800EF976D /* HOIHDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E45AD71D006AF800EF976D /* HOIHDataManager.m */; };
-		C778C3FB2A03242DF28F43E3 /* libPods-HOIH.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A314704C449E60B188E67A01 /* libPods-HOIH.a */; };
+		C83CF9857DFB4AB66FFE7E03 /* libPods-HOIHTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5708ADC7C8C66737AD5105 /* libPods-HOIHTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +72,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		74782950640EF70BE2697704 /* Pods-HOIH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HOIH/Pods-HOIH.debug.xcconfig"; sourceTree = "<group>"; };
+		3C541FA1C8D1B5C4A5129FAF /* libPods-HOIH.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HOIH.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E86CA5AF6D9AE5A5A18165A /* libPods-HOIHUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HOIHUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4145DEBE038ECF0818C12D /* Pods-HOIHUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIHUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HOIHUITests/Pods-HOIHUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7A5007D4468B236F20B720D7 /* Pods-HOIHUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIHUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HOIHUITests/Pods-HOIHUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9404D0B11D38CD66000CDA25 /* InvitationMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationMapCell.h; sourceTree = "<group>"; };
+		9404D0B21D38CD66000CDA25 /* InvitationMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationMapCell.m; sourceTree = "<group>"; };
+		9404D0B41D38CF04000CDA25 /* InvitedMembersCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitedMembersCollectionCell.h; sourceTree = "<group>"; };
+		9404D0B51D38CF04000CDA25 /* InvitedMembersCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitedMembersCollectionCell.m; sourceTree = "<group>"; };
+		9404D0BA1D38D254000CDA25 /* MemberCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberCollectionCell.h; sourceTree = "<group>"; };
+		9404D0BB1D38D254000CDA25 /* MemberCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberCollectionCell.m; sourceTree = "<group>"; };
 		940B375C1D38317900F7AE8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		943E37EA1CFDBDFB002BEFB3 /* ImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtil.h; sourceTree = "<group>"; };
 		943E37EB1CFDBDFB002BEFB3 /* ImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtil.m; sourceTree = "<group>"; };
@@ -144,8 +158,11 @@
 		94E45AD31D002EAF00EF976D /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		94E45AD61D006AF800EF976D /* HOIHDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOIHDataManager.h; sourceTree = "<group>"; };
 		94E45AD71D006AF800EF976D /* HOIHDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOIHDataManager.m; sourceTree = "<group>"; };
-		99E92AD8DA76DCBDE9CAB533 /* Pods-HOIH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIH.release.xcconfig"; path = "Pods/Target Support Files/Pods-HOIH/Pods-HOIH.release.xcconfig"; sourceTree = "<group>"; };
-		A314704C449E60B188E67A01 /* libPods-HOIH.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HOIH.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A720A15FC512E0AA572AC00A /* Pods-HOIHTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIHTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HOIHTests/Pods-HOIHTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA5708ADC7C8C66737AD5105 /* libPods-HOIHTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HOIHTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C662E85F5FE36D4B4E153215 /* Pods-HOIH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HOIH/Pods-HOIH.debug.xcconfig"; sourceTree = "<group>"; };
+		CB5075228D97DDF92D11ECB0 /* Pods-HOIH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIH.release.xcconfig"; path = "Pods/Target Support Files/Pods-HOIH/Pods-HOIH.release.xcconfig"; sourceTree = "<group>"; };
+		F01068611DAEC5C6F198FAB9 /* Pods-HOIHTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HOIHTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HOIHTests/Pods-HOIHTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				949C20FD1D33D97F00F44003 /* MapKit.framework in Frameworks */,
-				C778C3FB2A03242DF28F43E3 /* libPods-HOIH.a in Frameworks */,
+				4D261540BE18780F0BABB107 /* libPods-HOIH.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83CF9857DFB4AB66FFE7E03 /* libPods-HOIHTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,12 +187,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6764A3AB45D9C6580E53ABBB /* libPods-HOIHUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C7029B12D815C358B3F9718 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C662E85F5FE36D4B4E153215 /* Pods-HOIH.debug.xcconfig */,
+				CB5075228D97DDF92D11ECB0 /* Pods-HOIH.release.xcconfig */,
+				F01068611DAEC5C6F198FAB9 /* Pods-HOIHTests.debug.xcconfig */,
+				A720A15FC512E0AA572AC00A /* Pods-HOIHTests.release.xcconfig */,
+				7A5007D4468B236F20B720D7 /* Pods-HOIHUITests.debug.xcconfig */,
+				7A4145DEBE038ECF0818C12D /* Pods-HOIHUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9404D0B71D38D1BD000CDA25 /* BasicInfo */ = {
+			isa = PBXGroup;
+			children = (
+				949C8DC11D32DFCA002991D5 /* InvitationHeadCell.h */,
+				949C8DC21D32DFCA002991D5 /* InvitationHeadCell.m */,
+				9404D0B11D38CD66000CDA25 /* InvitationMapCell.h */,
+				9404D0B21D38CD66000CDA25 /* InvitationMapCell.m */,
+			);
+			name = BasicInfo;
+			sourceTree = "<group>";
+		};
+		9404D0B81D38D1DE000CDA25 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				949C8DC41D32DFDA002991D5 /* InvitedMembersCell.h */,
+				949C8DC51D32DFDA002991D5 /* InvitedMembersCell.m */,
+				9404D0B41D38CF04000CDA25 /* InvitedMembersCollectionCell.h */,
+				9404D0B51D38CF04000CDA25 /* InvitedMembersCollectionCell.m */,
+				9404D0BA1D38D254000CDA25 /* MemberCollectionCell.h */,
+				9404D0BB1D38D254000CDA25 /* MemberCollectionCell.m */,
+			);
+			name = Members;
+			sourceTree = "<group>";
+		};
+		9404D0B91D38D1F0000CDA25 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				949C8DC71D32DFEA002991D5 /* InvitationMessageCell.h */,
+				949C8DC81D32DFEA002991D5 /* InvitationMessageCell.m */,
+				9472FD261D365F80001E1472 /* InvSendMessageCell.h */,
+				9472FD271D365F80001E1472 /* InvSendMessageCell.m */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
 		943E37E91CFDBDE7002BEFB3 /* ImageUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,14 +421,9 @@
 		949C8DC01D32DFA7002991D5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				949C8DC11D32DFCA002991D5 /* InvitationHeadCell.h */,
-				949C8DC21D32DFCA002991D5 /* InvitationHeadCell.m */,
-				949C8DC41D32DFDA002991D5 /* InvitedMembersCell.h */,
-				949C8DC51D32DFDA002991D5 /* InvitedMembersCell.m */,
-				949C8DC71D32DFEA002991D5 /* InvitationMessageCell.h */,
-				949C8DC81D32DFEA002991D5 /* InvitationMessageCell.m */,
-				9472FD261D365F80001E1472 /* InvSendMessageCell.h */,
-				9472FD271D365F80001E1472 /* InvSendMessageCell.m */,
+				9404D0B71D38D1BD000CDA25 /* BasicInfo */,
+				9404D0B81D38D1DE000CDA25 /* Members */,
+				9404D0B91D38D1F0000CDA25 /* Messages */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -373,8 +435,8 @@
 				94BB08341CF888D6006B477F /* HOIHTests */,
 				94BB083F1CF888D6006B477F /* HOIHUITests */,
 				94BB08161CF888D5006B477F /* Products */,
-				E84D5248B1483EB58ED50D25 /* Pods */,
 				FC7491AEC89827710EB09328 /* Frameworks */,
+				4C7029B12D815C358B3F9718 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -474,20 +536,13 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
-		E84D5248B1483EB58ED50D25 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				74782950640EF70BE2697704 /* Pods-HOIH.debug.xcconfig */,
-				99E92AD8DA76DCBDE9CAB533 /* Pods-HOIH.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		FC7491AEC89827710EB09328 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				949C20FC1D33D97F00F44003 /* MapKit.framework */,
-				A314704C449E60B188E67A01 /* libPods-HOIH.a */,
+				3C541FA1C8D1B5C4A5129FAF /* libPods-HOIH.a */,
+				BA5708ADC7C8C66737AD5105 /* libPods-HOIHTests.a */,
+				3E86CA5AF6D9AE5A5A18165A /* libPods-HOIHUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -499,12 +554,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94BB08451CF888D6006B477F /* Build configuration list for PBXNativeTarget "HOIH" */;
 			buildPhases = (
-				2293EB052AD3B24E1BBA8DE9 /* Check Pods Manifest.lock */,
+				746F78CAD8D2BC341208B407 /* 📦 Check Pods Manifest.lock */,
 				94BB08111CF888D5006B477F /* Sources */,
 				94BB08121CF888D5006B477F /* Frameworks */,
 				94BB08131CF888D5006B477F /* Resources */,
-				A7371D40AEC877BA236FFFBA /* Embed Pods Frameworks */,
-				5791254C37023D2F7CD5130E /* Copy Pods Resources */,
+				48D60357AEE41E1AB7050356 /* 📦 Embed Pods Frameworks */,
+				0A5309A85C8285483A8EA896 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -519,9 +574,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94BB08481CF888D6006B477F /* Build configuration list for PBXNativeTarget "HOIHTests" */;
 			buildPhases = (
+				7F8DE8E3394FE6CF1C955894 /* 📦 Check Pods Manifest.lock */,
 				94BB082D1CF888D6006B477F /* Sources */,
 				94BB082E1CF888D6006B477F /* Frameworks */,
 				94BB082F1CF888D6006B477F /* Resources */,
+				71507B57DC708C2873903271 /* 📦 Embed Pods Frameworks */,
+				A01B760A2B1B43CB680D0E6F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,9 +595,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94BB084B1CF888D6006B477F /* Build configuration list for PBXNativeTarget "HOIHUITests" */;
 			buildPhases = (
+				069E932C6D7485917A5C5E01 /* 📦 Check Pods Manifest.lock */,
 				94BB08381CF888D6006B477F /* Sources */,
 				94BB08391CF888D6006B477F /* Frameworks */,
 				94BB083A1CF888D6006B477F /* Resources */,
+				4A1D8C5F73E0C5DAB9F1616C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -621,14 +681,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2293EB052AD3B24E1BBA8DE9 /* Check Pods Manifest.lock */ = {
+		069E932C6D7485917A5C5E01 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,14 +696,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5791254C37023D2F7CD5130E /* Copy Pods Resources */ = {
+		0A5309A85C8285483A8EA896 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,19 +711,94 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HOIH/Pods-HOIH-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A7371D40AEC877BA236FFFBA /* Embed Pods Frameworks */ = {
+		48D60357AEE41E1AB7050356 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HOIH/Pods-HOIH-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A1D8C5F73E0C5DAB9F1616C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HOIHUITests/Pods-HOIHUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71507B57DC708C2873903271 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HOIHTests/Pods-HOIHTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		746F78CAD8D2BC341208B407 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7F8DE8E3394FE6CF1C955894 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A01B760A2B1B43CB680D0E6F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HOIHTests/Pods-HOIHTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -688,6 +823,7 @@
 				9448377F1D01D10D00D73DAE /* CDInvitation.m in Sources */,
 				944D0BFD1CFC74C000BD998E /* InvitationCell.m in Sources */,
 				949C8DC61D32DFDA002991D5 /* InvitedMembersCell.m in Sources */,
+				9404D0B61D38CF04000CDA25 /* InvitedMembersCollectionCell.m in Sources */,
 				949C8DBF1D32DFA2002991D5 /* InvitationDetailViewController.m in Sources */,
 				944D0C001CFC891F00BD998E /* InvitedLayer.m in Sources */,
 				9476AFB51D00D77800488C55 /* CDFriends+CoreDataProperties.m in Sources */,
@@ -701,7 +837,9 @@
 				94613BCC1CFF0F45008E517F /* CDFriends.m in Sources */,
 				94613BCF1CFF103D008E517F /* CDFriendsManager.m in Sources */,
 				949C8DC91D32DFEA002991D5 /* InvitationMessageCell.m in Sources */,
+				9404D0BC1D38D254000CDA25 /* MemberCollectionCell.m in Sources */,
 				94DBE4271D369F8900AB432F /* CDMessageManager.m in Sources */,
+				9404D0B31D38CD66000CDA25 /* InvitationMapCell.m in Sources */,
 				9467091E1D34D74A00298472 /* AddMemberController.m in Sources */,
 				943E37EC1CFDBDFB002BEFB3 /* ImageUtil.m in Sources */,
 				949C20F81D33CD0C00F44003 /* TypePickerView.m in Sources */,
@@ -844,7 +982,7 @@
 		};
 		94BB08461CF888D6006B477F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74782950640EF70BE2697704 /* Pods-HOIH.debug.xcconfig */;
+			baseConfigurationReference = C662E85F5FE36D4B4E153215 /* Pods-HOIH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HOIH/Info.plist;
@@ -856,7 +994,7 @@
 		};
 		94BB08471CF888D6006B477F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99E92AD8DA76DCBDE9CAB533 /* Pods-HOIH.release.xcconfig */;
+			baseConfigurationReference = CB5075228D97DDF92D11ECB0 /* Pods-HOIH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HOIH/Info.plist;
@@ -868,6 +1006,7 @@
 		};
 		94BB08491CF888D6006B477F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F01068611DAEC5C6F198FAB9 /* Pods-HOIHTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HOIHTests/Info.plist;
@@ -880,6 +1019,7 @@
 		};
 		94BB084A1CF888D6006B477F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A720A15FC512E0AA572AC00A /* Pods-HOIHTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HOIHTests/Info.plist;
@@ -892,6 +1032,7 @@
 		};
 		94BB084C1CF888D6006B477F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A5007D4468B236F20B720D7 /* Pods-HOIHUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HOIHUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -903,6 +1044,7 @@
 		};
 		94BB084D1CF888D6006B477F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A4145DEBE038ECF0818C12D /* Pods-HOIHUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HOIHUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

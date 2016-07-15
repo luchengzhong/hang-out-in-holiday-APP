@@ -18,8 +18,18 @@
 #import "InvSendMessageCell.h"
 #import "CDMessageManager.h"
 #import "CDMessage.h"
-
+#import "InvitationMapCell.h"
+#import "InvitedMembersCollectionCell.h"
+typedef enum {
+    rPayMethod,
+    rPlaceName,
+    rPlaceMap,
+    rMemHead,
+    rMemCollection,
+    rCount
+} rowForBasicInfo;
 @interface InvitationDetailViewController (){
+    CLLocationManager *locationManager;
     NSArray *memArray;
     NSArray *messageArray;
     
@@ -34,6 +44,9 @@
     
     CGRect initialFrame;//head frame
     HOIHHTTPClient *detailClient;
+    
+    Boolean showMap;//if show place map
+    Boolean showMembers;//if show member collection
 }
 
 @end
@@ -42,6 +55,12 @@
 static NSInteger invSec = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    locationManager = [[CLLocationManager alloc] init];
+    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [locationManager requestWhenInUseAuthorization];
+    }
+    showMap=false;
+    showMembers=true;
     NavTitle = @"";
     showSendMessageCell=false;
     // Uncomment the following line to preserve selection between presentations.
@@ -49,7 +68,7 @@ static NSInteger invSec = 0;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     //self.refreshControl.backgroundColor = [UIColor whiteColor];
-    self.refreshControl.tintColor = [UIColor blackColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
     //self.refreshControl.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
     [self.refreshControl addTarget:self
                             action:@selector(refreshMessages)
@@ -84,6 +103,8 @@ static NSInteger invSec = 0;
     self.navigationItem.title = NavTitle;
     [self initHead];
     [self refreshMessages];
+    [self.view bringSubviewToFront:self.refreshControl];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -147,12 +168,16 @@ static NSInteger invSec = 0;
     //_headView.frame = textFrame;
     //_tripHeaderView.bounds = frame;
     //[self.tableView setTableHeaderView:_tripHeaderView];
+    
+    [self.view bringSubviewToFront:self.refreshControl];
 }
 
 #pragma mark - Views
 -(void)initHead{
     if(!_invitation)
         return;
+    
+    //self.navigationController.navigationBar.alpha = 0.9f;
     CDFriends *invitor = _userInfoDict[_invitation.inviter_id];
     _invitorPhotoView.image =
     [ImageUtil roundedImageNamed:invitor.photo
@@ -219,7 +244,7 @@ static NSInteger invSec = 0;
     confirmBt = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width/3, 0, frame.size.width/3*2, height)];
     [confirmBt setTitle:@"确认加入" forState:UIControlStateNormal];
     [confirmBt setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    confirmBt.backgroundColor = [UIColor greenColor];
+    confirmBt.backgroundColor = [UIColor colorWithRed:0.1529 green:0.6824 blue:0.3764 alpha:1];
     [confirmBt addTarget:self
            action:@selector(confirmInv)
  forControlEvents:UIControlEventTouchDown];
@@ -274,9 +299,79 @@ static NSInteger invSec = 0;
 -(void)editInv{
     
 }
+#pragma mark - Table view action
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0){
+        NSIndexPath *modifyPath = nil;
+        Boolean isShown =false;
+        NSMutableArray *arrayBefore = [self getRowIndexArray];
+        NSMutableArray *array;
+        if(indexPath.row == [arrayBefore[rPlaceName] integerValue]){
+            if(!_invitation.coordinate || [_invitation.coordinate length]==0){
+                return;
+            }
+            if(showMap){
+                array = [self getRowIndexArray];
+                showMap =!showMap;
+            }else{
+                showMap =!showMap;
+                array = [self getRowIndexArray];
+            }
+            
+            modifyPath = [NSIndexPath indexPathForRow:[array[rPlaceMap] integerValue] inSection:0];
+            isShown = showMap;
+            
+        }if(indexPath.row == [arrayBefore[rMemHead] integerValue]){
+            if(showMembers){
+                array = [self getRowIndexArray];
+                showMembers =!showMembers;
+            }else{
+                showMembers =!showMembers;
+                array = [self getRowIndexArray];
+            }
+            modifyPath = [NSIndexPath indexPathForRow:[array[rMemCollection] integerValue] inSection:0];
+            isShown = showMembers;
+        }
+        if(modifyPath){
+            InvitationHeadCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            [cell setButton:isShown];
+            if(isShown){
+                [tableView insertRowsAtIndexPaths:@[modifyPath] withRowAnimation:UITableViewRowAnimationTop];
+            }else{
+                [tableView deleteRowsAtIndexPaths:@[modifyPath] withRowAnimation:UITableViewRowAnimationTop];
+            }
+            
+        }
+    }else if(indexPath.section == 1){
+        
+    }
+}
 
 #pragma mark - Table view data source
-
+- (NSMutableArray*)getRowIndexArray{
+    NSMutableArray *array = [NSMutableArray new];
+    NSInteger index=0;
+    while([array count] < rCount){
+        NSInteger currentRowIndex = index;
+        switch ([array count]) {
+            case rPlaceMap:
+                if(!showMap){
+                    currentRowIndex=-1;
+                    index--;
+                }
+                break;
+            case rMemCollection:
+                if(!showMembers){
+                    currentRowIndex=-1;
+                    index--;
+                }
+                break;
+        }
+        index++;
+        [array addObject:[NSNumber numberWithInteger:currentRowIndex]];
+    }
+    return array;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if(_invitation && _userInfoDict){
         return 2;
@@ -286,7 +381,12 @@ static NSInteger invSec = 0;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(section == 0){
-        return 2;
+        NSInteger count = rCount;
+        if(!showMap)
+            count--;
+        if(!showMembers)
+            count--;
+        return count;
     }
     if(section == 1){
         if(messageArray)
@@ -299,14 +399,41 @@ static NSInteger invSec = 0;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *rCell;
     if(indexPath.section == 0){
-        if(indexPath.row == 0){
+        NSMutableArray *indexArray = [self getRowIndexArray];
+        if(indexPath.row == [indexArray[rPayMethod] integerValue]){
             InvitationHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationHead" forIndexPath:indexPath];
-            CDFriends *invitor = (CDFriends*)(_userInfoDict[_invitation.inviter_id]);
-            [cell setInvitation:_invitation Invitor:invitor];
+            //CDFriends *invitor = (CDFriends*)(_userInfoDict[_invitation.inviter_id]);
+            [cell setContent:[NSString stringWithFormat:@"支付方式：%@",_invitation.pay_method] ShowButton:false];
             rCell = cell;
-        }else if(indexPath.row == 1){
-            InvitedMembersCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitedMembers" forIndexPath:indexPath];
-            [cell setMembers:memArray UsersInfoDict:_userInfoDict];
+        }else if(indexPath.row == [indexArray[rPlaceName] integerValue]){
+            InvitationHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationHead" forIndexPath:indexPath];
+            NSString *placeStr;
+            if(_invitation.place_name)
+                placeStr = [NSString stringWithFormat:@"地点：%@",_invitation.place_name];
+            else
+                placeStr = @"未指定地点";
+            
+            Boolean shown =true;
+            if(!_invitation.coordinate || [_invitation.coordinate length] == 0){
+                shown=false;
+            }
+            [cell setContent:placeStr ShowButton:shown];
+            [cell setButton:showMap];
+            rCell = cell;
+        }else if(indexPath.row == [indexArray[rPlaceMap] integerValue]){
+            InvitationMapCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationMap" forIndexPath:indexPath];
+            [cell setCoordinatesStr:_invitation.coordinate];
+            rCell = cell;
+        }else if(indexPath.row == [indexArray[rMemHead] integerValue]){
+            InvitationHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationHead" forIndexPath:indexPath];
+            //CDFriends *invitor = (CDFriends*)(_userInfoDict[_invitation.inviter_id]);
+            [cell setContent:@"成员" ShowButton:true];
+            [cell setButton:showMembers];
+            rCell = cell;
+        }else if(indexPath.row == [indexArray[rMemCollection] integerValue]){
+            InvitedMembersCollectionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitatedMemberCollection" forIndexPath:indexPath];
+            //[cell setMembers:memArray UsersInfoDict:_userInfoDict];
+            [cell setMembers:memArray];
             rCell = cell;
         }
     }else if(indexPath.section == 1){
@@ -341,12 +468,17 @@ static NSInteger invSec = 0;
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat height = 0;
+    NSArray *array = [self getRowIndexArray];
     switch(indexPath.section){
         case 0:
-            if(indexPath.row==0){
-                height = 115;
+            if(indexPath.row == [array[rMemCollection] integerValue]){
+                NSInteger num = [memArray count];
+                NSInteger rowNum = num/2 +num%2;
+                height = rowNum*43 +(rowNum-1)*30;
+            }else if(indexPath.row == [array[rPlaceMap] integerValue]){
+                height = 200;
             }else{
-                height =100;
+                height = 34;
             }
             break;
         case 1:
@@ -357,20 +489,27 @@ static NSInteger invSec = 0;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if(!sendMessageView){
-        InvSendMessageCell *cell;
-        if(showSendMessageCell && section==1){
-            cell = [tableView dequeueReusableCellWithIdentifier:@"InvSendMessage"];
-            if(!cell){
-                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"InvSendMessage" owner:self options:nil];
-                cell = [nib objectAtIndex:0];
+    if(section == 1){
+        if(!sendMessageView){
+            InvSendMessageCell *cell;
+            if(showSendMessageCell && section==1){
+                cell = [tableView dequeueReusableCellWithIdentifier:@"InvSendMessage"];
+                if(!cell){
+                    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"InvSendMessage" owner:self options:nil];
+                    cell = [nib objectAtIndex:0];
+                }
+                cell.delegate = self;
+                
+                CGRect frame = [cell frame];
+                frame.size.width = tableView.frame.size.width;
+                [cell setFrame:frame];
             }
-            cell.delegate = self;
+            sendMessageView = [[UIView alloc] initWithFrame:[cell frame]];
+            [sendMessageView addSubview:cell];
         }
-        sendMessageView = [[UIView alloc] initWithFrame:[cell frame]];
-        [sendMessageView addSubview:cell];
+        return sendMessageView;
     }
-    return sendMessageView;
+    return nil;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if(showSendMessageCell && section==1){

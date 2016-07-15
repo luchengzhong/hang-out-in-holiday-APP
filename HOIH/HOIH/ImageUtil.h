@@ -13,6 +13,7 @@
 + (UIImage*)roundedImageNamed:(NSString*)image toWidth:(NSInteger)width height:(NSInteger)height;
 + (UIImage*)roundedImage:(UIImage*)image toWidth:(NSInteger)width height:(NSInteger)height;
 + (UIImage*)roundedImage:(UIImage*)image;
++ (UIImage*)imageShortNamed:(NSString*)shortName;
 + (UIImage*)resizeImage:(NSString*)name;
 + (UIImage*)typeImage:(NSString*)type;
 + (UIImage*)typeGaussImage:(NSString*)type;

@@ -14,11 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - LGSideMenuController (1.0.10)
 
 DEPENDENCIES:
   - AFNetworking
+  - LGSideMenuController (~> 1.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  LGSideMenuController: 8682bdbd0008c1acfbce95eaf96cc3657bca5f95
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 5d4353eb807fdd779e3738ce9c1b20694641366b
+
+COCOAPODS: 1.0.0

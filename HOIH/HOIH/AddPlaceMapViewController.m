@@ -110,6 +110,12 @@
         annot.coordinate = cor;
         if(self.mapView)
             [self.mapView addAnnotation:annot];
+        
+        MKCoordinateRegion mapRegion;
+        mapRegion.center = cor;
+        mapRegion.span.latitudeDelta = 0.02;
+        mapRegion.span.longitudeDelta = 0.02;
+        [_mapView setRegion:mapRegion animated: NO];
     }else{
         annot.coordinate = cor;
     }
@@ -137,9 +143,10 @@
 
 #pragma mark - location
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
-    CLLocation *currentLocation = [manager location];
-    [_mapView setCenterCoordinate:currentLocation.coordinate animated:NO];
+    if(!annot){
+        CLLocation *currentLocation = [manager location];
+        [_mapView setCenterCoordinate:currentLocation.coordinate animated:NO];
+    }
 }
 /*
 #pragma mark - Navigation

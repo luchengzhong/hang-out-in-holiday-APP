@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CDFriends.h"
 #import "CDInvitation.h"
+#import "InvitationDetailViewController.h"
 
 @interface InvitationHeadCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *inviterPhotoView;
-@property (weak, nonatomic) IBOutlet UILabel *invitorNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UIButton *extendButton;
 
--(void)setInvitation:(CDInvitation*)invitation Invitor:(CDFriends*)invitor;
+@property (weak) InvitationDetailViewController *delegate;
+
+-(void)setContent:(NSString*)content ShowButton:(Boolean)isShow;
+//-(void)setInvitation:(CDInvitation*)invitation Invitor:(CDFriends*)invitor;
+-(void)setButton:(Boolean)extended;
 @end

@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *typeImage;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *payMethodLabel;
 
 @property CDInvitation *invitation;
 @property NSDictionary* memberList;

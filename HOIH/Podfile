@@ -5,6 +5,7 @@ platform :ios, '8.0'
 
 target 'HOIH' do
 pod 'AFNetworking'
+pod 'LGSideMenuController', '~> 1.0.0'
 end
 
 target 'HOIHTests' do
