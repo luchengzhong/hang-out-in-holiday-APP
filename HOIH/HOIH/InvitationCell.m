@@ -75,8 +75,8 @@
     
     _placeLabel.text = invitation.place_name;
     _typeImage.image = [ImageUtil typeImage:invitation.type];
-    _typeLabel.text = invitation.type;
-    _payMethodLabel.text = invitation.pay_method;
+    _typeLabel.text = NSLocalizedString(invitation.type, nil);
+    _payMethodLabel.text = NSLocalizedString(invitation.pay_method, nil);
     
     CDFriends *invitor = (CDFriends*)memberList[invitation.inviter_id];
     _nameLabel.text = invitor.name;

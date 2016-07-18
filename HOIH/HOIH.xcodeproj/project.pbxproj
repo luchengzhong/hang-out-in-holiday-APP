@@ -27,6 +27,8 @@
 		9472FD281D365F80001E1472 /* InvSendMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9472FD271D365F80001E1472 /* InvSendMessageCell.m */; };
 		9476AFB51D00D77800488C55 /* CDFriends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476AFB41D00D77800488C55 /* CDFriends+CoreDataProperties.m */; };
 		9476AFBC1D00DAD200488C55 /* CDInvitationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476AFBB1D00DAD200488C55 /* CDInvitationManager.m */; };
+		948697F21D3CFD1800E25EBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 948697F41D3CFD1800E25EBD /* Localizable.strings */; };
+		948697FE1D3D061F00E25EBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 948698001D3D061F00E25EBD /* Localizable.strings */; };
 		949C20F81D33CD0C00F44003 /* TypePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C20F71D33CD0C00F44003 /* TypePickerView.m */; };
 		949C20FB1D33D2AB00F44003 /* AddInvitationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949C20FA1D33D2AB00F44003 /* AddInvitationController.m */; };
 		949C20FD1D33D97F00F44003 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949C20FC1D33D97F00F44003 /* MapKit.framework */; };
@@ -111,6 +113,12 @@
 		9476AFB41D00D77800488C55 /* CDFriends+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDFriends+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9476AFBA1D00DAD200488C55 /* CDInvitationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDInvitationManager.h; sourceTree = "<group>"; };
 		9476AFBB1D00DAD200488C55 /* CDInvitationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDInvitationManager.m; sourceTree = "<group>"; };
+		948697EE1D3CFA1600E25EBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		948697EF1D3CFA1600E25EBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		948697F11D3CFAEF00E25EBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		948697F31D3CFD1800E25EBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		948697FF1D3D061F00E25EBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		948698011D3D063100E25EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		949C20F61D33CD0C00F44003 /* TypePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypePickerView.h; sourceTree = "<group>"; };
 		949C20F71D33CD0C00F44003 /* TypePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypePickerView.m; sourceTree = "<group>"; };
 		949C20F91D33D2AB00F44003 /* AddInvitationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddInvitationController.h; sourceTree = "<group>"; };
@@ -478,6 +486,8 @@
 			isa = PBXGroup;
 			children = (
 				94BB08191CF888D6006B477F /* main.m */,
+				948697F41D3CFD1800E25EBD /* Localizable.strings */,
+				948698001D3D061F00E25EBD /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -658,7 +668,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948697FE1D3D061F00E25EBD /* Localizable.strings in Resources */,
 				94BB082B1CF888D6006B477F /* LaunchScreen.storyboard in Resources */,
+				948697F21D3CFD1800E25EBD /* Localizable.strings in Resources */,
 				940B375D1D38317900F7AE8F /* Assets.xcassets in Resources */,
 				94BB08231CF888D6006B477F /* Main.storyboard in Resources */,
 			);
@@ -879,10 +891,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		948697F41D3CFD1800E25EBD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				948697F31D3CFD1800E25EBD /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		948698001D3D061F00E25EBD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				948697FF1D3D061F00E25EBD /* en */,
+				948698011D3D063100E25EBD /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		94BB08211CF888D6006B477F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				94BB08221CF888D6006B477F /* Base */,
+				948697EE1D3CFA1600E25EBD /* zh-Hans */,
+				948697F11D3CFAEF00E25EBD /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -891,6 +922,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				94BB082A1CF888D6006B477F /* Base */,
+				948697EF1D3CFA1600E25EBD /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

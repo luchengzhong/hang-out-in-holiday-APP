@@ -1,0 +1,123 @@
+
+/* Class = "UILabel"; text = "大酒店"; ObjectID = "1t9-Jd-XNs"; */
+"1t9-Jd-XNs.text" = "大酒店";
+
+/* Class = "UIBarButtonItem"; title = "主页"; ObjectID = "3EZ-gO-E5C"; */
+"3EZ-gO-E5C.title" = "Home";
+
+/* Class = "UILabel"; text = "邀请者"; ObjectID = "5qf-GQ-zTe"; */
+"5qf-GQ-zTe.text" = "Invitor";
+
+/* Class = "UILabel"; text = "桌游"; ObjectID = "6xX-zc-zCi"; */
+"6xX-zc-zCi.text" = "Desk game";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8Hc-n6-8I3"; */
+"8Hc-n6-8I3.text" = "Label";
+
+/* Class = "UILabel"; text = "时间："; ObjectID = "90I-Ex-X6x"; */
+"90I-Ex-X6x.text" = "Time:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "91k-iM-NQ1"; */
+"91k-iM-NQ1.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "CGD-Jk-BFI"; */
+"CGD-Jk-BFI.text" = "Title";
+
+/* Class = "UILabel"; text = "支付方式："; ObjectID = "Fis-v4-FPN"; */
+"Fis-v4-FPN.text" = "Pay:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "G5X-Hb-MqO"; */
+"G5X-Hb-MqO.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "主页"; ObjectID = "G9S-Ek-5OB"; */
+"G9S-Ek-5OB.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "GA0-YH-3MN"; */
+"GA0-YH-3MN.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "发起邀请"; ObjectID = "K38-yn-MGr"; */
+"K38-yn-MGr.normalTitle" = "Confirm";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LEq-r6-RdZ"; */
+"LEq-r6-RdZ.text" = "Label";
+
+/* Class = "UILabel"; text = "备注："; ObjectID = "M0r-7x-ez5"; */
+"M0r-7x-ez5.text" = "Comment:";
+
+/* Class = "UISegmentedControl"; MY5-NM-ca6.segmentTitles[0] = "A-A"; ObjectID = "MY5-NM-ca6"; */
+"MY5-NM-ca6.segmentTitles[0]" = "A-A";
+
+/* Class = "UISegmentedControl"; MY5-NM-ca6.segmentTitles[1] = "请客"; ObjectID = "MY5-NM-ca6"; */
+"MY5-NM-ca6.segmentTitles[1]" = "Free";
+
+/* Class = "UISegmentedControl"; MY5-NM-ca6.segmentTitles[2] = "其他"; ObjectID = "MY5-NM-ca6"; */
+"MY5-NM-ca6.segmentTitles[2]" = "Others";
+
+/* Class = "UILabel"; text = "成员"; ObjectID = "Q2I-HW-U0L"; */
+"Q2I-HW-U0L.text" = "Members";
+
+/* Class = "UILabel"; text = "点击添加成员"; ObjectID = "Q8f-ON-G69"; */
+"Q8f-ON-G69.text" = "Type to add members";
+
+/* Class = "UILabel"; text = "A-A"; ObjectID = "SaQ-yM-e22"; */
+"SaQ-yM-e22.text" = "A-A";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TPe-OG-ii5"; */
+"TPe-OG-ii5.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Ujm-xp-2el"; */
+"Ujm-xp-2el.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Uyr-Uw-dpt"; */
+"Uyr-Uw-dpt.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Friends"; ObjectID = "VZ2-yt-YqR"; */
+"VZ2-yt-YqR.title" = "Friends";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WxJ-lP-BYx"; */
+"WxJ-lP-BYx.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "好友"; ObjectID = "XmP-kC-QAG"; */
+"XmP-kC-QAG.title" = "Friends";
+
+/* Class = "UILabel"; text = "地点："; ObjectID = "YSv-6Q-kEL"; */
+"YSv-6Q-kEL.text" = "Place：";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bss-8T-lyL"; */
+"bss-8T-lyL.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "c2l-DF-228"; */
+"c2l-DF-228.text" = "Label";
+
+/* Class = "UILabel"; text = "修改了XXXXXX"; ObjectID = "ebI-id-EOH"; */
+"ebI-id-EOH.text" = "修改了XXXXXX";
+
+/* Class = "UILabel"; text = "成员"; ObjectID = "fsK-zY-BlH"; */
+"fsK-zY-BlH.text" = "Members";
+
+/* Class = "UILabel"; text = "分类："; ObjectID = "hyu-19-uro"; */
+"hyu-19-uro.text" = "Type：";
+
+/* Class = "UILabel"; text = "备注"; ObjectID = "jf0-gh-QJW"; */
+"jf0-gh-QJW.text" = "Comment";
+
+/* Class = "UIButton"; normalTitle = "发送"; ObjectID = "leR-IR-NGE"; */
+"leR-IR-NGE.normalTitle" = "Send";
+
+/* Class = "UITableViewController"; title = "Friends"; ObjectID = "mwc-lp-lmZ"; */
+"mwc-lp-lmZ.title" = "Friends";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nb6-12-crz"; */
+"nb6-12-crz.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oRV-Pl-BMF"; */
+"oRV-Pl-BMF.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qeg-a4-C8c"; */
+"qeg-a4-C8c.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ue0-79-qqM"; */
+"ue0-79-qqM.text" = "Label";
+
+/* Class = "UILabel"; text = "时间"; ObjectID = "zCh-Uv-fyW"; */
+"zCh-Uv-fyW.text" = "Time";

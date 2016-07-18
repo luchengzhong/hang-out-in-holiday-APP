@@ -34,23 +34,23 @@
         NSString *content = _cdMessage.content;
         NSString *typeStr = @"";
         if([type isEqualToString:@"change_place"]){
-            typeStr = @"修改了地点";
-            content = [NSString stringWithFormat:@"新地点：%@",_cdMessage.content];
+            typeStr = NSLocalizedString(@"Change Place", nil);
+            content = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"New Place", nil),_cdMessage.content];
         }else if([type isEqualToString:@"change_time"]){
-            typeStr = @"修改了时间";
-            content = [NSString stringWithFormat:@"新时间：%@",_cdMessage.content];
+            typeStr = NSLocalizedString(@"Change Date", nil);
+            content = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"New Date", nil),_cdMessage.content];
         }else if([type isEqualToString:@"user_comment"]){
-            typeStr = @"消息";
+            typeStr = NSLocalizedString(@"Message", nil);
             content = _cdMessage.content;
         }else if([type isEqualToString:@"change_comment"]){
-            typeStr = @"修改了备注";
+            typeStr = NSLocalizedString(@"Change Comment", nil);
         }else if([type isEqualToString:@"change_status"]){
             if([content isEqualToString:@"1"]){
-                content = @"接受了邀请";
-                typeStr = @"接受";
+                content = NSLocalizedString(@"Accepted the invitaion", nil);
+                typeStr = NSLocalizedString(@"Accepted", nil);
             }else{
-                content = @"拒绝了邀请";
-                typeStr = @"拒绝";
+                content = NSLocalizedString(@"Refused the invitation", nil);
+                typeStr = NSLocalizedString(@"Refused", nil);
             }
         }
         _contentLabel.text = content;

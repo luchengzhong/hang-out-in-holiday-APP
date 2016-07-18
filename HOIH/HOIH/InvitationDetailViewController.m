@@ -88,13 +88,13 @@ static NSInteger invSec = 0;
         for(NSDictionary *dict in memArray){
             if([dict[@"UID"] isEqualToString:username]){
                 if([dict[@"status"] isEqualToString:@"0"]){
-                    NavTitle = @"待处理";
+                    NavTitle = NSLocalizedString(@"New", nil);
                     [self addConfirmButtons];
                 }else if([dict[@"status"] isEqualToString:@"1"]){
-                    NavTitle = @"已接受";
+                    NavTitle = NSLocalizedString(@"Accepted", nil);
                     [self addSendMessageView];
                 }else if([dict[@"status"] isEqualToString:@"-1"]){
-                    NavTitle = @"已拒绝";
+                    NavTitle = NSLocalizedString(@"Refused", nil);
                     [self addRejectView];
                 }
             }
@@ -120,7 +120,7 @@ static NSInteger invSec = 0;
 -(void)updateMessage{
     detailClient = [[HOIHHTTPClient alloc] initWithStaticURL];
     detailClient.delegate = self;
-    self.navigationItem.title = @"正在载入消息...";
+    self.navigationItem.title = NSLocalizedString(@"Loading...", nil);
     [self updateMessageByClient:detailClient];
 }
 -(void)updateMessageByClient:(HOIHHTTPClient*)client{
@@ -222,14 +222,14 @@ static NSInteger invSec = 0;
     });*/
 }
 -(void)addRejectView{
-    self.navigationItem.title = @"已拒绝";
+    self.navigationItem.title = NSLocalizedString(@"Refused", nil);;
 }
 -(void)addSendMessageView{
     showSendMessageCell=true;
     [self.tableView reloadData];
 }
 -(void)addEditBarButton{
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStyleDone target:self action:@selector(editInv)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", nil) style:UIBarButtonItemStyleDone target:self action:@selector(editInv)];
     self.navigationItem.rightBarButtonItem = item;
 }
 -(void)addConfirmButtons{
@@ -242,7 +242,7 @@ static NSInteger invSec = 0;
     confirmView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.origin.y+frame.size.height-height-self.tabBarController.tabBar.frame.size.height, frame.size.width, height)];
     
     confirmBt = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width/3, 0, frame.size.width/3*2, height)];
-    [confirmBt setTitle:@"确认加入" forState:UIControlStateNormal];
+    [confirmBt setTitle:NSLocalizedString(@"Confirm", nil) forState:UIControlStateNormal];
     [confirmBt setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     confirmBt.backgroundColor = [UIColor colorWithRed:0.1529 green:0.6824 blue:0.3764 alpha:1];
     [confirmBt addTarget:self
@@ -250,7 +250,7 @@ static NSInteger invSec = 0;
  forControlEvents:UIControlEventTouchDown];
     
     rejectBt = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, frame.size.width/3, height)];
-    [rejectBt setTitle:@"拒绝" forState:UIControlStateNormal];
+    [rejectBt setTitle:NSLocalizedString(@"Refuse", nil) forState:UIControlStateNormal];
     [rejectBt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     rejectBt.backgroundColor = [UIColor redColor];
     [rejectBt addTarget:self
@@ -403,15 +403,15 @@ static NSInteger invSec = 0;
         if(indexPath.row == [indexArray[rPayMethod] integerValue]){
             InvitationHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationHead" forIndexPath:indexPath];
             //CDFriends *invitor = (CDFriends*)(_userInfoDict[_invitation.inviter_id]);
-            [cell setContent:[NSString stringWithFormat:@"支付方式：%@",_invitation.pay_method] ShowButton:false];
+            [cell setContent:[NSString stringWithFormat:@"%@%@",NSLocalizedString(@"Pay:", nil),_invitation.pay_method] ShowButton:false];
             rCell = cell;
         }else if(indexPath.row == [indexArray[rPlaceName] integerValue]){
             InvitationHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationHead" forIndexPath:indexPath];
             NSString *placeStr;
             if(_invitation.place_name)
-                placeStr = [NSString stringWithFormat:@"地点：%@",_invitation.place_name];
+                placeStr = [NSString stringWithFormat:@"%@%@",NSLocalizedString(@"Place:", nil),_invitation.place_name];
             else
-                placeStr = @"未指定地点";
+                placeStr = NSLocalizedString(@"No location", nil);
             
             Boolean shown =true;
             if(!_invitation.coordinate || [_invitation.coordinate length] == 0){
@@ -427,7 +427,7 @@ static NSInteger invSec = 0;
         }else if(indexPath.row == [indexArray[rMemHead] integerValue]){
             InvitationHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvitationHead" forIndexPath:indexPath];
             //CDFriends *invitor = (CDFriends*)(_userInfoDict[_invitation.inviter_id]);
-            [cell setContent:@"成员" ShowButton:true];
+            [cell setContent:NSLocalizedString(@"Members", nil) ShowButton:true];
             [cell setButton:showMembers];
             rCell = cell;
         }else if(indexPath.row == [indexArray[rMemCollection] integerValue]){

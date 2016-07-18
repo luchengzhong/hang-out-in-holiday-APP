@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  HOIH
+
+  Created by 钟路成 on 16/7/18.
+  Copyright © 2016年 Lucheng Zhong. All rights reserved.
+*/
+//in file
+"Let's go party" = "假日潇洒小组";
+"Home" = "主页";
+"Loading..." = "正在载入消息...";
+"Accepted" = "已接受";
+"Refused" = "已拒绝";
+"New" = "待处理";
+"Edit" = "编辑";
+"Confirm" = "确认";
+"Refuse" = "拒绝";
+"Pay:" = "支付方式：";
+"Place:" = "地点：";
+"No location" = "未指定地点";
+"Members" = "成员";
+"Change Place" = "修改了地点";
+"Change Date" = "修改了时间";
+"New Date" = "新时间";
+"New Place" = "新地点";
+"Message" = "消息";
+"Change Comment" = "修改了备注";
+"Accepted the invitaion" = "接受了邀请";
+"Refused the invitation" = "拒绝了邀请";
+"Sending" = "发送中";
+"Send" = "发送";
+

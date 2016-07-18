@@ -41,7 +41,7 @@
     
     tabBarItem1.selectedImage = [[UIImage imageNamed:@"home_item"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem1.image = [[UIImage imageNamed:@"home_item"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    tabBarItem1.title = NSLocalizedString (@"Sök resa", nil);
+    tabBarItem1.title = NSLocalizedString (@"Home", nil);
     
     _mainPageController=sideMenuController;
     

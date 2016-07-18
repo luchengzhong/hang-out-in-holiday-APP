@@ -33,7 +33,7 @@
     CGRect frame = self.view.frame;
     CGFloat height = 40;
     bt = [[UIButton alloc] initWithFrame:CGRectMake(0, frame.origin.y+frame.size.height-height-self.tabBarController.tabBar.frame.size.height, frame.size.width, height)];
-    [bt setTitle:@"确认" forState:UIControlStateNormal];
+    [bt setTitle:NSLocalizedString(@"Confirm", nil) forState:UIControlStateNormal];
     bt.titleLabel.textColor = [UIColor whiteColor];
     bt.backgroundColor = [UIColor blueColor];
     [self.tableView addSubview:bt];

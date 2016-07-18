@@ -35,7 +35,7 @@
     }
     [_contentTextField setEnabled:false];
     [_sendBt setEnabled:false];
-    [_sendBt setTitle:@"发送中" forState:UIControlStateNormal];
+    [_sendBt setTitle:NSLocalizedString(@"Sending", nil) forState:UIControlStateNormal];
     
     [hClient addMessageForInv:_delegate.invitation.iid Time:[DateUtil getCurrentNormalDateString] Content:_contentTextField.text];
 }
@@ -48,7 +48,7 @@
     [_contentTextField setEnabled:true];
     _contentTextField.text = @"";
     [_sendBt setEnabled:true];
-    [_sendBt setTitle:@"发送" forState:UIControlStateNormal];
+    [_sendBt setTitle:NSLocalizedString(@"Send", nil) forState:UIControlStateNormal];
     [_delegate HOIHHTTPClient:client didUpdateMessages:messages Invitation:invitation];
 }
 @end

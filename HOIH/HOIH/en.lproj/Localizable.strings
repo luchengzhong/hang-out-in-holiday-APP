@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  HOIH
+
+  Created by 钟路成 on 16/7/18.
+  Copyright © 2016年 Lucheng Zhong. All rights reserved.
+*/
+"请客" = "Free";
+"A-A" = "A-A";
+"其他" = "Others";
+
+"桌游" = "Board";
+"聚餐" = "Dinner";
+"开黑" = "Game";
+"KTV" = "KTV";
+"旅游" = "Travel";
+"Party" = "Party";
+"其他" = "Others";
